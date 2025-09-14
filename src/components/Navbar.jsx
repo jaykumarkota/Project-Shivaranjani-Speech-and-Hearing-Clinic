@@ -1,11 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import { assets } from '../assets/assets.js';
+import '../styles/Navbar.css'
+
 function Navbar() {
-  console.log(assets)
+
   return (
-    <header className="navbar">
+    <header className="navbar container">
       <div className="logo">
-        <img src={assets.clinic_logo} alt="logo" className="logo-image" />
+        <img src={assets.clinic_logo} width="40px" alt="logo" className="logo-image" />
         <h2>Shivaranjani<br />Speech&Hearing<br />Clinic</h2>
       </div>
       <ul className="navlinks">
