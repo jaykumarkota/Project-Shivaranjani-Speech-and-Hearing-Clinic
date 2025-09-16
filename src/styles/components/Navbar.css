@@ -4,6 +4,10 @@
   align-items: center;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+  /* background: var(--clr-bg-dark);
+  border-radius: 10px;
+  padding-left: 2rem;
+  padding-right: 2rem; */
 }
 
 .logo {
@@ -20,6 +24,7 @@
 .logo-title {
   font-size: var(--size-lg);
   line-height: 1em;
+  user-select: none;
 }
 
 .navlinks {

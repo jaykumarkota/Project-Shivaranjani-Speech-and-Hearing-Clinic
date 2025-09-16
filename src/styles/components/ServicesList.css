@@ -1,0 +1,14 @@
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: var(--size-base);
+  margin-top: var(--size-base);
+}
+
+.service {}
+
+.services-list-img {
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+}
