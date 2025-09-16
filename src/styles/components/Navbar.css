@@ -1,0 +1,155 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-img {
+  width: var(--size-5xl);
+  height: var(--size-5xl);
+}
+
+.logo-title {
+  font-size: var(--size-lg);
+  line-height: 1em;
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  column-gap: 1.5em;
+  font-size: var(--size-base);
+  font-weight: 500;
+}
+
+.navlink {
+  color: #284b98;
+  position: relative;
+  padding: 0 5px;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.navlink::after {
+  content: '';
+  background: var(--clr-primary);
+  height: 3px;
+  width: 0;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.navlink:hover::after {
+  width: 100%;
+}
+
+
+.navlink:hover {
+  color: var(--clr-primary);
+  transform: translateY(-2px);
+}
+
+.navlink .active {
+  color: var(--clr-primary);
+}
+
+.book-btn {
+  font-size: var(--size-base);
+  margin-left: 5px;
+  transition: transform 0.3s;
+}
+
+.book-btn:hover {
+  transform: translateY(-2px);
+}
+
+.nav-line {
+  border: 1px solid var(--clr-primary);
+  padding-top: 1.5rem;
+  padding-inline: 0;
+}
+
+.nav-ham-menu {
+  display: none;
+}
+
+/* responsive */
+
+
+/* 2xl */
+/* @media (max-width: 1536px) {} */
+
+/* xl */
+/* @media (max-width: 1280px) {} */
+
+/* lg */
+@media (max-width: 1024px) {
+  .logo {
+    gap: 0.5rem;
+  }
+
+  .logo-title {
+    font-size: var(--size-base);
+  }
+
+  .navlinks {
+    column-gap: 0.5em;
+    font-size: var(--size-sm);
+  }
+
+  .book-btn {
+    font-size: var(--size-sm);
+  }
+
+}
+
+/* md */
+@media (max-width: 768px) {
+  .navlinks {
+    display: none;
+  }
+
+  .nav-ham-menu {
+    display: block;
+    color: #284b98;
+    font-size: var(--size-xl);
+    padding: 5px;
+  }
+}
+
+/* sm */
+@media (max-width: 640px) {
+  .logo {
+    gap: 0.3rem;
+  }
+
+  .logo-img {
+    width: var(--size-4xl);
+    height: var(--size-4xl);
+  }
+
+  .logo-title {
+    font-size: var(--size-sm);
+  }
+
+  .nav-ham-menu {
+    font-size: var(--size-lg);
+  }
+
+
+}
+
+/* xs */
+/* @media (max-width: 475px) {} */

@@ -2,7 +2,7 @@
 
 function Home() {
   return (
-    <div>Home</div>
+    <div className="home-page container">Home</div>
   )
 }
 export default Home;

@@ -63,4 +63,5 @@ button {
 
 a {
   color: var(--clr-primary);
+  text-decoration: none;
 }

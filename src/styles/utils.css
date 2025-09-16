@@ -29,14 +29,14 @@
   /* text-transform: uppercase; */
   border-radius: 6px;
   /* letter-spacing: -0.05em; */
-  box-shadow: 0 4px 6px -1px #488aec31,
-    0 2px 4px -1px #488aec17;
+  box-shadow: 0 6px 8px -1px #488aec31,
+    0 4px 6px -1px #488aec17;
   transition: all 0.6s ease;
 }
 
 button:hover {
   box-shadow:
-    0 10px 15px -3px #488aec4f,
+    0 13px 15px -3px #488aec4f,
     0 4px 6px -2px #488aec17;
 }
 
@@ -52,6 +52,7 @@ button:active {
   margin-right: auto;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  /* border: 1px solid red; */
 }
 
 .section {
