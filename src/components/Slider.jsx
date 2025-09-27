@@ -9,7 +9,7 @@ import '../styles/components/Slider.css';
 function Slider() {
 
   return (
-    <section className="slider-ads container">
+    <section className="slider-ads container section">
       <Swiper
         className='slider-wrapper'
         slidesPerView={1}

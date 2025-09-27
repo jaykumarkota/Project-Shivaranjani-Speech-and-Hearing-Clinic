@@ -1,0 +1,194 @@
+.appointment-form {
+  max-width: 550px;
+  padding: 30px;
+  background: #f5f8fa;
+  /* background: var(--clr-bg-dark); */
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'name number'
+    'email email'
+    'age gender'
+    'date time'
+    'msg msg'
+    'submit submit';
+  gap: 1rem;
+}
+
+.name-box {
+  grid-area: name;
+}
+
+.tel-box {
+  grid-area: number;
+}
+
+.email-box {
+  grid-area: email;
+}
+
+.age-box {
+  grid-area: age;
+}
+
+.gender-box {
+  grid-area: gender;
+}
+
+.date-box {
+  grid-area: date;
+}
+
+.time-box {
+  grid-area: time;
+}
+
+.msg-box {
+  grid-area: msg;
+}
+
+.submit-box {
+  grid-area: submit;
+}
+
+.input-box {
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+}
+
+.input-icon:not(.msg-icon) {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: var(--size-base);
+  color: #555;
+}
+
+.input-icon.msg-icon {
+  position: absolute;
+  top: 10%;
+  top: 15px;
+  left: 12px;
+  font-size: var(--size-base);
+  color: #555;
+}
+
+.input-box input,
+.input-box select,
+.input-box textarea {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: var(--size-sm);
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+  background: #fff;
+}
+
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+.input-box select {
+  appearance: none;
+  cursor: pointer;
+  background: #fff;
+}
+
+.input-box input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.input-box input[type="number"]::-webkit-inner-spin-button,
+.input-box input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-box textarea {
+  resize: none;
+  /* min-height: 120px; */
+}
+
+.submit-box {
+  width: 100%;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.submit-box .submit-btn {
+  width: 100%;
+  font-size: var(--size-base);
+}
+
+.submit-confirm-msg {
+  font-size: var(--size-xs);
+  color: green;
+  margin-top: 15px;
+}
+
+
+
+/* -----------responsiveness----------- */
+/* 2xl */
+/* @media (max-width: 1536px) {} */
+
+/* xl */
+/* @media (max-width: 1280px) {} */
+
+/* lg */
+/* @media (max-width: 1024px) {} */
+
+/* md */
+/* @media (max-width: 768px) {} */
+
+/* sm */
+/* @media (max-width: 640px) {} */
+
+/* xs */
+@media (max-width: 475px) {
+  .appointment-form {
+    padding: 20px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'name'
+      'number'
+      'email'
+      'age'
+      'gender'
+      'date'
+      'time'
+      'msg'
+      'submit';
+    gap: 0.5rem;
+  }
+
+  .input-icon:not(.msg-icon) {
+    font-size: var(--size-sm);
+  }
+
+  .input-icon.msg-icon {
+    font-size: var(--size-sm);
+  }
+
+  .input-box input,
+  .input-box select,
+  .input-box textarea {
+    font-size: var(--size-sm);
+  }
+
+  .submit-box {
+    margin-top: auto;
+  }
+
+  .submit-box .submit-btn {
+    font-size: var(--size-sm);
+  }
+}
