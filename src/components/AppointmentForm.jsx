@@ -1,30 +1,78 @@
-import { FaUserLarge } from "react-icons/fa6";
-import { FaVenusMars } from "react-icons/fa6";
-import { FaCalendarDays } from "react-icons/fa6";
+import { useState } from "react";
+import {
+  FaUserLarge, FaVenusMars, FaCalendarDays, FaClock,
+} from "react-icons/fa6";
+import { FaStickyNote } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { GiAges } from "react-icons/gi";
-import { FaClock } from "react-icons/fa6";
-import { FaStickyNote } from "react-icons/fa";
 import "../styles/components/AppointmentForm.css";
 
 function AppointmentForm() {
-  const today = new Date().toISOString().split("T")[0];
+  const [formData, setFormData] = useState({
+    name: "",
+    number: "",
+    email: "",
+    age: "",
+    gender: "",
+    date: "",
+    time: "",
+    message: ""
+  });
 
+  const [status, setStatus] = useState("");
+
+  const today = new Date().toISOString().split("T")[0];
   const maxDate = new Date();
   maxDate.setDate(maxDate.getDate() + 30);
   const max = maxDate.toISOString().split("T")[0];
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Submitting...");
+
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbzJcEZ8GwVzH05fNLUSOtIzshE71mrXknoqvSm2AjB9tP3h8V90JnKxb93B7uwz--qz/exec", {
+        method: "POST",
+        mode: "no-cors",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+
+      setStatus("✅ Submitted successfully!");
+      setFormData({
+        name: "",
+        number: "",
+        email: "",
+        age: "",
+        gender: "",
+        date: "",
+        time: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error(error);
+      setStatus("❌ Submission failed. Try again.");
+    }
+  };
+
   return (
-    <form className="appointment-form">
+    <form className="appointment-form" onSubmit={handleSubmit}>
       <div className="input-box name-box">
         <FaUserLarge className="input-icon" />
         <input
           type="text"
           name="name"
-          className="input-name"
+          value={formData.name}
+          onChange={handleChange}
           placeholder="Your Name"
-          pattern="[A-Za-z ]{2,50}"
+          pattern="^[A-Za-z ]{2,50}$"
           title="Name should be 2–50 letters only"
           required
         />
@@ -35,9 +83,10 @@ function AppointmentForm() {
         <input
           type="tel"
           name="number"
-          className="input-number"
+          value={formData.number}
+          onChange={handleChange}
           placeholder="Your Number"
-          pattern="[0-9]{10}"
+          pattern="^[0-9]{10}$"
           title="Enter a 10-digit phone number"
           required
         />
@@ -48,7 +97,8 @@ function AppointmentForm() {
         <input
           type="email"
           name="email"
-          className="input-email"
+          value={formData.email}
+          onChange={handleChange}
           placeholder="Your Email"
           required
         />
@@ -59,7 +109,8 @@ function AppointmentForm() {
         <input
           type="number"
           name="age"
-          className="input-age"
+          value={formData.age}
+          onChange={handleChange}
           placeholder="Your Age"
           min="1"
           max="100"
@@ -69,7 +120,12 @@ function AppointmentForm() {
 
       <div className="input-box gender-box">
         <FaVenusMars className="input-icon" />
-        <select name="gender" className="user-gender-select" required>
+        <select
+          name="gender"
+          value={formData.gender}
+          onChange={handleChange}
+          required
+        >
           <option value="">Select Gender</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
@@ -82,7 +138,8 @@ function AppointmentForm() {
         <input
           type="date"
           name="date"
-          className="input-date"
+          value={formData.date}
+          onChange={handleChange}
           min={today}
           max={max}
           required
@@ -94,7 +151,8 @@ function AppointmentForm() {
         <input
           type="time"
           name="time"
-          className="input-time"
+          value={formData.time}
+          onChange={handleChange}
           min="10:00"
           max="20:00"
           step="900"
@@ -106,6 +164,8 @@ function AppointmentForm() {
         <FaStickyNote className="input-icon msg-icon" />
         <textarea
           name="message"
+          value={formData.message}
+          onChange={handleChange}
           placeholder="Enter Your Message"
           rows="3"
           minLength="5"
@@ -117,9 +177,10 @@ function AppointmentForm() {
         <button type="submit" className="submit-btn btn">
           Submit
         </button>
-        <p className="submit-confirm-msg">submited succuesfully</p>
+        {status && <p className="submit-confirm-msg">{status}</p>}
       </div>
     </form>
   );
 }
+
 export default AppointmentForm;
