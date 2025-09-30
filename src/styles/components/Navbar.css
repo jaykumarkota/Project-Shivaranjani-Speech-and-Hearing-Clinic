@@ -4,10 +4,10 @@
   align-items: center;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  /* background: var(--clr-bg-dark);
-  border-radius: 10px;
-  padding-left: 2rem;
-  padding-right: 2rem; */
+  /* background: var(--clr-bg-dark); */
+  /* border-radius: 10px; */
+  /* padding-left: 2rem; */
+  /* padding-right: 2rem; */
 }
 
 .logo {
@@ -103,6 +103,7 @@
 
 /* lg */
 @media (max-width: 1024px) {
+
   .logo {
     gap: 0.5rem;
   }
@@ -151,9 +152,6 @@
     font-size: var(--size-sm);
   }
 
-  .nav-ham-menu {
-    font-size: var(--size-lg);
-  }
 }
 
 /* xs */
