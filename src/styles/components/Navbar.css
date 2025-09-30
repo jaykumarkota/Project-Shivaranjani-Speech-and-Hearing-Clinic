@@ -90,7 +90,9 @@
   display: none;
 }
 
-/* responsive */
+
+
+/* -------------responsive-------------- */
 
 
 /* 2xl */
@@ -152,8 +154,6 @@
   .nav-ham-menu {
     font-size: var(--size-lg);
   }
-
-
 }
 
 /* xs */

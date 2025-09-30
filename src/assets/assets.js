@@ -6,6 +6,13 @@ import hearing_logo from "./hearing-logo.png";
 import speech_logo from "./speech-logo.png";
 import calender_logo from "./calender-logo.png";
 
+import hear_large_screen from "./hear-large-screen.png";
+import hear_mini_screen from "./hear-mini-screen.jpg";
+import speech_large_screen from "./speech-large-screen.png";
+import speech_mini_screen from "./speech-mini-screen.jpg";
+import book_large_screen from "./book-large-screen.png";
+import book_mini_screen from "./book-mini-screen.jpg";
+
 export const assets = {
   clinic_logo,
   hearing_services_list,
@@ -31,3 +38,12 @@ export const slideImages = [
     alt: "slide image 3",
   },
 ];
+
+export const servicesListImgs = {
+  hear_large_screen,
+  hear_mini_screen,
+  speech_large_screen,
+  speech_mini_screen,
+  book_large_screen,
+  book_mini_screen,
+};
