@@ -18,12 +18,12 @@
 
 
 .btn {
-  padding: 0.7rem 1rem;
+  padding: 0.6rem 0.85rem;
   display: inline-block;
   background-color: #488aec;
   /* background-color: var(--clr-btn); */
   color: var(--clr-light);
-  /* font-size: 0.75rem; */
+  font-size: 0.87rem;
   font-weight: 600;
   text-align: center;
   /* text-transform: uppercase; */

@@ -74,6 +74,7 @@ function AppointmentForm() {
           placeholder="Your Name"
           pattern="^[A-Za-z ]{2,50}$"
           title="Name should be 2–50 letters only"
+          aria-label="name"
           required
         />
       </div>
@@ -88,6 +89,7 @@ function AppointmentForm() {
           placeholder="Your Number"
           pattern="^[0-9]{10}$"
           title="Enter a 10-digit phone number"
+          aria-label="number"
           required
         />
       </div>
@@ -100,6 +102,7 @@ function AppointmentForm() {
           value={formData.email}
           onChange={handleChange}
           placeholder="Your Email"
+          aria-label="email address"
           required
         />
       </div>
@@ -114,6 +117,7 @@ function AppointmentForm() {
           placeholder="Your Age"
           min="1"
           max="100"
+          aria-label="age"
           required
         />
       </div>
@@ -124,6 +128,7 @@ function AppointmentForm() {
           name="gender"
           value={formData.gender}
           onChange={handleChange}
+          aria-label="gender"
           required
         >
           <option value="">Select Gender</option>
@@ -142,6 +147,7 @@ function AppointmentForm() {
           onChange={handleChange}
           min={today}
           max={max}
+          aria-label="appointment date"
           required
         />
       </div>
@@ -156,6 +162,7 @@ function AppointmentForm() {
           min="10:00"
           max="20:00"
           step="900"
+          aria-label="appointment time"
           required
         />
       </div>
@@ -170,6 +177,7 @@ function AppointmentForm() {
           rows="3"
           minLength="5"
           maxLength="300"
+          aria-label="message"
         ></textarea>
       </div>
 

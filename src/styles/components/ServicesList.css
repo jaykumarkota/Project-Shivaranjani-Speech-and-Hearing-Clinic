@@ -28,13 +28,15 @@
 /* md */
 @media (max-width: 768px) {
   .services-list {
+    background: var(--clr-light);
+    padding: 10px;
     justify-content: center;
+    gap: var(--size-sm);
   }
 
   .services-list-img {
     max-width: 120px;
   }
-
 
   .service-large {
     display: none;
@@ -49,7 +51,7 @@
 /* sm */
 @media (max-width: 640px) {
   .services-list {
-    gap: var(--size-sm);
+    gap: var(--size-xxs);
   }
 }
 
