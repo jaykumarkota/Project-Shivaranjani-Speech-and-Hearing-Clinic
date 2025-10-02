@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
-import { assets, slideImages } from "../assets/assets";
+import { slideImages } from "../assets/assets";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
