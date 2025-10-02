@@ -97,10 +97,14 @@ function Navbar() {
             Contact
           </NavLink>
         </li>
+<<<<<<< HEAD
 
         {(!isMobile) && (
           <li className="nav-line"></li>
         )}
+=======
+        <li className="nav-line"></li>
+>>>>>>> b29fb6c23a1a842a7278e6e86fbc2fbe4a8aa511
         <li>
           <Link
             className="book-btn btn"
