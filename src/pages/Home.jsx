@@ -3,6 +3,7 @@ import ServicesList from "../components/ServicesList";
 import Slider from "../components/Slider";
 import ModalWrapper from "../components/ModalWrapper";
 import FormSection from "../components/FormSection";
+import Testimonial from "../components/Testimonial";
 function Home() {
   return (
     <>
@@ -10,6 +11,8 @@ function Home() {
       <ServicesList />
       <Slider />
       <MiniAbout />
+      <FormSection />
+      <Testimonial />
       <FormSection />
     </>
   )

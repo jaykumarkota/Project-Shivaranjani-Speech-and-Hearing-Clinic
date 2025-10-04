@@ -47,3 +47,36 @@ export const servicesListImgs = {
   book_large_screen,
   book_mini_screen,
 };
+
+export const testimonials = [
+  {
+    id: 1,
+    name: "John Doe",
+    message:
+      "Working with this team has been a fantastic experience. Their dedication and attention to detail exceeded my expectations. I highly recommend their services to anyone looking for quality and professionalism.",
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    message:
+      "I am extremely impressed with the support and service I received. Every interaction was smooth and efficient. This project has truly transformed how we operate, and I couldn't be happier with the results.",
+  },
+  {
+    id: 3,
+    name: "Michael Johnson",
+    message:
+      "The quality of work and the timely delivery amazed me. I felt valued as a client, and the team’s expertise really shows in the final product. I will definitely collaborate with them again in the future.",
+  },
+  {
+    id: 4,
+    name: "Emily Davis",
+    message:
+      "I’ve worked with many companies, but this one stands out. Their innovative solutions and proactive approach made a significant difference. The outcome was beyond my expectations, and I am very satisfied.",
+  },
+  {
+    id: 5,
+    name: "David Wilson",
+    message:
+      "From start to finish, the experience was seamless. Communication was clear, the team was responsive, and the results were excellent. I feel confident recommending them to anyone who wants outstanding service.",
+  },
+];
