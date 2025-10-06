@@ -1,0 +1,60 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  font-size: var(--size-lg);
+  background-color: #112f70;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  background-color: #0e2560;
+  transform: translateY(-4px);
+}
+
+
+/* -------media section-------- */
+/* 2xl */
+/* @media (max-width: 1536px) {} */
+
+/* xl */
+/* @media (max-width: 1280px) {} */
+
+/* lg */
+/* @media (max-width: 1024px) {} */
+
+/* md */
+/* @media (max-width: 768px) {} */
+
+/* sm */
+@media (max-width: 640px) {
+  .scroll-to-top {
+    width: 35px;
+    height: 35px;
+    font-size: var(--size-base);
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* xs */
+/* @media (max-width: 475px) {} */

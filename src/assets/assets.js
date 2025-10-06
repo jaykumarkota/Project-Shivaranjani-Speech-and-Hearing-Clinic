@@ -32,11 +32,6 @@ export const slideImages = [
     src: ex_sliding_img2,
     alt: "slide image 2",
   },
-  {
-    id: 3,
-    src: clinic_logo,
-    alt: "slide image 3",
-  },
 ];
 
 export const servicesListImgs = {
@@ -78,5 +73,59 @@ export const testimonials = [
     name: "David Wilson",
     message:
       "From start to finish, the experience was seamless. Communication was clear, the team was responsive, and the results were excellent. I feel confident recommending them to anyone who wants outstanding service.",
+  },
+];
+
+export const faqs = [
+  {
+    question:
+      "What services does Shivaranjani Speech and Hearing Clinic offer?",
+    answer:
+      "We provide comprehensive services including hearing tests, speech therapy, hearing aid fitting, tinnitus management, and pediatric speech-language therapy.",
+  },
+  {
+    question: "How do I book an appointment?",
+    answer:
+      "You can book an appointment by calling our clinic directly, sending us a message through our website, or visiting us in person during working hours.",
+  },
+  {
+    question: "Do you provide hearing aids?",
+    answer:
+      "Yes, we offer digital hearing aids from trusted brands. Our audiologists help you choose the best device based on your hearing test results and lifestyle.",
+  },
+  {
+    question: "How long does a hearing test take?",
+    answer:
+      "A complete hearing test usually takes around 20 to 30 minutes, including consultation and result explanation by our audiologist.",
+  },
+  {
+    question: "Can speech therapy help children with delayed speech?",
+    answer:
+      "Yes, our certified speech-language pathologists specialize in helping children with delayed speech, articulation difficulties, and communication disorders.",
+  },
+  {
+    question: "Do you treat adults with speech or voice problems?",
+    answer:
+      "Absolutely. We provide personalized therapy for adults dealing with stammering, voice strain, pronunciation issues, or speech loss due to medical conditions.",
+  },
+  {
+    question: "What should I bring for my first visit?",
+    answer:
+      "Please bring any previous hearing or speech reports, doctor referrals if available, and a valid ID. For children, parents can also bring school reports if relevant.",
+  },
+  {
+    question: "Do you offer home visits or online consultations?",
+    answer:
+      "Yes, based on availability, we offer both home visits and online therapy sessions for speech and hearing care.",
+  },
+  {
+    question: "Is the treatment covered by insurance?",
+    answer:
+      "Coverage depends on your insurance plan. We can provide all necessary documents and reports for reimbursement if your policy includes audiology or speech therapy.",
+  },
+  {
+    question: "Where is the clinic located?",
+    answer:
+      "Shivaranjani Speech and Hearing Clinic is conveniently located in [Your Area/City]. You can find our exact location on Google Maps via the contact page.",
   },
 ];

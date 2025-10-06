@@ -91,14 +91,6 @@
   opacity: 0.8;
 }
 
-/* .swiper-button-next svg,
-.swiper-button-prev svg {
-  fill: #fff;
-  color: #94a3b8;
-  height: 2rem;
-  width: 2rem;
-  transition: fill 0.3s;
-} */
 
 
 /* -----------responsiveness------ */
@@ -196,7 +188,6 @@
   .quote-icon {
     font-size: 1.8rem;
   }
-
 }
 
 /* xs */
@@ -212,6 +203,10 @@
 
   .testimonial-para {
     font-size: var(--size-xs);
+  }
+
+  .slide-cont {
+    padding: .2rem 1rem;
   }
 
 }

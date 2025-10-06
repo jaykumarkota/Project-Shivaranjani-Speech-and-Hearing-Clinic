@@ -1,0 +1,248 @@
+.footer {
+  background-color: var(--clr-primary);
+  background-image: url("../../assets/footer-bg-large.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--clr-light);
+  padding: 4em 3em 0em;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.row1 {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+}
+
+
+.footer-small-desc {
+  max-width: 40ch;
+  margin: 1rem 0 1.5rem .5rem;
+  font-size: var(--size-sm);
+}
+
+/* ---follow links----- */
+.follow-us-links {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.follow-us-icons {
+  font-size: var(--size-3xl);
+  color: var(--clr-light);
+  transition: transform 300ms ease, color 300ms ease;
+}
+
+/* ----follow us links hover----- */
+.footer-links:hover .fb-icon {
+  color: #1877F2;
+}
+
+.footer-links:hover .wa-icon {
+  color: #25D366;
+}
+
+.footer-links:hover .insta-icon {
+  color: #E4405F;
+}
+
+.footer-links:hover .x-icon {
+  color: #000;
+}
+
+
+
+/* ----about and service links---- */
+.footer-links {
+  color: var(--clr-light);
+  font-size: var(--size-sm);
+}
+
+.footer-links:hover .follow-us-icons {
+  transform: translateY(-3px);
+  color: #3f5072;
+}
+
+.about-us-title,
+.services-title,
+.follow-us-title,
+.footer-contact-title {
+  font-size: var(--size-xl);
+  font-weight: 600;
+}
+
+.about-us-links,
+.services-links,
+.follow-us-links {
+  list-style: none;
+  margin-top: .7rem;
+}
+
+.footer-about-us,
+.footer-services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* ----contact---- */
+
+.contact-icon {
+  display: inline-block;
+  margin-right: .5em;
+  font-size: var(--size-base);
+  flex-shrink: 0;
+  user-select: none;
+  margin-top: 2px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  color: var(--clr-light);
+  font-size: var(--size-sm);
+}
+
+.contact-address-cont {
+  align-items: flex-start;
+}
+
+.footer-contact-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+  margin-top: .7rem;
+
+}
+
+.contact-address {
+  display: inline-block;
+  max-width: 40ch;
+  word-wrap: break-word;
+}
+
+.contact-email:hover,
+.contact-phone:hover {
+  color: #e0e0e0;
+  text-decoration: underline;
+}
+
+
+/* ---copyright msg----- */
+.copyright-msg {
+  border-top: 1px solid rgb(204, 204, 204, 0.5);
+  text-align: center;
+  margin-top: 2.5rem;
+  padding: 1.5em;
+  font-size: var(--size-xs);
+}
+
+
+
+
+/* ---------media section------------ */
+/* 2xl */
+/* @media (max-width: 1536px) {} */
+
+/* xl */
+/* @media (max-width: 1280px) {} */
+
+
+/* lg */
+@media (max-width: 1024px) {
+  .row1 {
+    grid-template-columns: 2fr 1fr 1fr;
+    row-gap: 4em;
+  }
+}
+
+/* md */
+@media (max-width: 768px) {
+  .row1 {
+    grid-template-columns: 1fr;
+    row-gap: 3em;
+  }
+
+  .footer-about-us,
+  .footer-services {
+    align-items: flex-start;
+  }
+}
+
+/* sm */
+@media (max-width: 640px) {
+  .footer {
+    background-image: url("../../assets/footer-bg-small.jpg");
+    padding: 3em 3em 0em;
+  }
+
+  .row1 {
+    row-gap: 2em;
+  }
+
+  .footer-small-desc {
+    max-width: 50ch;
+    margin: 1rem 0 1rem .5rem;
+    font-size: var(--size-xs);
+  }
+
+  .follow-us-links {
+    gap: .5em;
+  }
+
+  .follow-us-icons {
+    font-size: var(--size-2xl);
+  }
+
+  .about-us-title,
+  .services-title,
+  .follow-us-title,
+  .footer-contact-title {
+    font-size: var(--size-base);
+  }
+
+  .footer-links {
+    font-size: var(--size-xs);
+  }
+
+  .about-us-links,
+  .services-links,
+  .follow-us-links {
+    margin-top: .5rem;
+  }
+
+  .contact-icon {
+    font-size: var(--size-sm);
+  }
+
+
+
+  /* ---contact---- */
+
+  .contact-item {
+    font-size: var(--size-xs);
+  }
+
+  .footer-contact-cont {
+    gap: .7em;
+    margin-top: .7rem;
+  }
+
+  .contact-address {
+    max-width: 50ch;
+  }
+
+  .copyright-msg {
+    text-align: center;
+    margin-top: 1.8rem;
+    padding: 1em .5em;
+    font-size: var(--size-xs);
+  }
+}
+
+/* xs */
+/* @media (max-width: 475px) {} */
