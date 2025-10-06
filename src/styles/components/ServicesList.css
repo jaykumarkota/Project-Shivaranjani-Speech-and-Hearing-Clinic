@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   gap: var(--size-base);
-  margin-top: var(--size-base);
+  /* margin-top: var(--size-base); */
 }
 
 .services-list-img {
@@ -15,7 +15,7 @@
   display: none;
 }
 
-/* ----------responsiveness----------- */
+/* ----------media section----------- */
 /* 2xl */
 /* @media (max-width: 1536px) {} */
 

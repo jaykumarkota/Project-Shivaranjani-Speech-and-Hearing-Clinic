@@ -109,7 +109,7 @@
 
 
 
-/* -------------responsive-------------- */
+/* -------------media section-------------- */
 
 
 /* 2xl */
@@ -227,6 +227,11 @@
 
 /* sm */
 @media (max-width: 640px) {
+  .navbar {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
   .logo {
     gap: 0.3rem;
   }

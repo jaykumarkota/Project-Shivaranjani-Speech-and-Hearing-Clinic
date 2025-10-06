@@ -1,6 +1,6 @@
 .appointment-form {
   max-width: 550px;
-  padding: 30px;
+  padding: 1.875rem;
   background: #f5f8fa;
   /* background: var(--clr-bg-dark); */
   border-radius: 12px;
@@ -155,7 +155,7 @@
 /* xs */
 @media (max-width: 475px) {
   .appointment-form {
-    padding: 20px;
+    padding: 1.25rem;
     grid-template-columns: 1fr;
     grid-template-areas:
       'name'

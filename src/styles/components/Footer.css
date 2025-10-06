@@ -62,7 +62,6 @@
 
 .footer-links:hover .follow-us-icons {
   transform: translateY(-3px);
-  color: #3f5072;
 }
 
 .about-us-title,
@@ -177,7 +176,7 @@
 @media (max-width: 640px) {
   .footer {
     background-image: url("../../assets/footer-bg-small.jpg");
-    padding: 3em 3em 0em;
+    padding: 2em 2em 0em;
   }
 
   .row1 {
@@ -186,7 +185,7 @@
 
   .footer-small-desc {
     max-width: 50ch;
-    margin: 1rem 0 1rem .5rem;
+    margin: .7rem 0 1rem .3rem;
     font-size: var(--size-xs);
   }
 
@@ -245,4 +244,8 @@
 }
 
 /* xs */
-/* @media (max-width: 475px) {} */
+@media (max-width: 475px) {
+  .footer {
+    padding: 2em 1.5em 0em;
+  }
+}

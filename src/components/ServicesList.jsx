@@ -1,5 +1,5 @@
 import "../styles/components/ServicesList.css";
-import { assets, servicesListImgs } from "../assets/assets";
+import { servicesListImgs } from "../assets/assets";
 import { Link } from "react-router-dom";
 function ServicesList() {
   return (
@@ -7,7 +7,6 @@ function ServicesList() {
       {/* large screens */}
       <div className="service service-large col1">
         <Link to="/services/hearing">
-          {" "}
           <img
             className="services-list-img"
             src={servicesListImgs.hear_large_screen}
