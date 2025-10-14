@@ -5,6 +5,7 @@ import MainLayout from './Layouts/MainLayout';
 import HearingServices from "./pages/HearingServices";
 import SpeechServices from "./pages/SpeechServices";
 import BookServices from "./components/FormSection";
+import Location from './components/Location';
 // import Services from "./pages/Services";
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         {/* <Route path="/services" element={<Services />} /> */}
-        {/* <Route path="/location" element={<Location />} /> */}
+        <Route path="/location" element={<Location />} />
         {/* <Route path="/contact" element={<Contact />} /> */}
 
 

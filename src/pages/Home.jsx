@@ -6,6 +6,7 @@ import FormSection from "../components/FormSection";
 import Testimonial from "../components/Testimonial";
 import FAQ from "../components/Faq";
 import Footer from "../components/Footer";
+import Location from "../components/Location";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <FormSection />
       <Testimonial />
       <FAQ />
+      <Location />
     </>
   )
 }
