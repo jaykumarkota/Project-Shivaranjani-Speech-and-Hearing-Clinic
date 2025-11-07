@@ -1,7 +1,12 @@
 import { useState } from "react";
 import {
-  FaUserLarge, FaVenusMars, FaCalendarDays, FaClock,
+  FaUserLarge,
+  FaVenusMars,
+  FaCalendarDays,
+  FaClock,
 } from "react-icons/fa6";
+import { FaUserDoctor } from "react-icons/fa6";
+import { FaClipboardList, FaTools } from "react-icons/fa";
 import { FaStickyNote } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -15,35 +20,73 @@ function AppointmentForm() {
     email: "",
     age: "",
     gender: "",
+    serviceType: "",
+    service: "",
     date: "",
     time: "",
-    message: ""
+    message: "",
   });
 
   const [status, setStatus] = useState("");
 
+  // Date setup
   const today = new Date().toISOString().split("T")[0];
   const maxDate = new Date();
   maxDate.setDate(maxDate.getDate() + 30);
   const max = maxDate.toISOString().split("T")[0];
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  // Service options
+  const serviceOptions = {
+    hearing: [
+      { value: "hearing_aids", label: "Hearing Aids" },
+      { value: "hearing_therapy", label: "Hearing Therapy" },
+      { value: "hearing_assessment", label: "Hearing Assessment" },
+    ],
+    speech: [
+      { value: "articulation_therapy", label: "Articulation Therapy" },
+      { value: "language_therapy", label: "Language Therapy" },
+      { value: "voice_therapy", label: "Voice Therapy" },
+    ],
   };
 
+  // Handle field change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    // Clear subservice when main type changes
+    if (name === "serviceType") {
+      setFormData((prev) => ({ ...prev, serviceType: value, service: "" }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
+  };
+
+  // Submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Submitting...");
 
     try {
-      await fetch("https://script.google.com/macros/s/AKfycbzJcEZ8GwVzH05fNLUSOtIzshE71mrXknoqvSm2AjB9tP3h8V90JnKxb93B7uwz--qz/exec", {
+      const webAppURL = "https://script.google.com/macros/s/AKfycbxhLpSOObf7EzxciLobQ6Kai1Nzdd1cIZW3n_sKGyxmc4I6yd_mWMYiSWdINZjvKsdb/exec"; // replace with your deployed script URL
+
+      // For localhost testing: use no-cors (cannot read response)
+      const isLocalhost = window.location.hostname === "localhost";
+
+      const response = await fetch(webAppURL, {
         method: "POST",
-        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json"
-        }
+        mode: isLocalhost ? "no-cors" : "cors",
+        mode: "no-cors" // ✅ localhost uses no-cors, production uses cors
       });
+
+      if (!isLocalhost) {
+        // Only check response for production (CORS allowed)
+        const result = await response.json();
+        if (result.status !== "success") {
+          throw new Error(result.message || "Submission failed");
+        }
+      }
 
       setStatus("✅ Submitted successfully!");
       setFormData({
@@ -52,18 +95,29 @@ function AppointmentForm() {
         email: "",
         age: "",
         gender: "",
+        serviceType: "",
+        service: "",
         date: "",
         time: "",
-        message: ""
+        message: "",
       });
     } catch (error) {
-      console.error(error);
-      setStatus("❌ Submission failed. Try again.");
+      console.error("Form submission error:", error);
+      setStatus("❌ Submission failed. Please try again.");
     }
   };
 
+  // Dynamically load subservice options
+  const currentSubOptions =
+    formData.serviceType === "hearing"
+      ? serviceOptions.hearing
+      : formData.serviceType === "speech"
+        ? serviceOptions.speech
+        : [];
+
   return (
     <form className="appointment-form" onSubmit={handleSubmit}>
+      {/* Name */}
       <div className="input-box name-box">
         <FaUserLarge className="input-icon" />
         <input
@@ -79,6 +133,7 @@ function AppointmentForm() {
         />
       </div>
 
+      {/* Phone */}
       <div className="input-box tel-box">
         <BsFillTelephoneFill className="input-icon" />
         <input
@@ -94,6 +149,7 @@ function AppointmentForm() {
         />
       </div>
 
+      {/* Email */}
       <div className="input-box email-box">
         <MdEmail className="input-icon" />
         <input
@@ -102,11 +158,12 @@ function AppointmentForm() {
           value={formData.email}
           onChange={handleChange}
           placeholder="Your Email"
-          aria-label="email address"
+          aria-label="email"
           required
         />
       </div>
 
+      {/* Age */}
       <div className="input-box age-box">
         <GiAges className="input-icon" />
         <input
@@ -122,6 +179,7 @@ function AppointmentForm() {
         />
       </div>
 
+      {/* Gender */}
       <div className="input-box gender-box">
         <FaVenusMars className="input-icon" />
         <select
@@ -138,6 +196,47 @@ function AppointmentForm() {
         </select>
       </div>
 
+      {/* Service Type */}
+      <div className="input-box service-type-box">
+        <FaUserDoctor className="input-icon" />
+        <select
+          name="serviceType"
+          value={formData.serviceType}
+          onChange={handleChange}
+          aria-label="service type"
+          required
+        >
+          <option value="">Select Service Type</option>
+          <option value="hearing">Hearing Service</option>
+          <option value="speech">Speech Service</option>
+        </select>
+      </div>
+
+      {/* Sub Service */}
+      <div className="input-box service-sub-box">
+        <FaClipboardList className="input-icon" />
+        <select
+          name="service"
+          value={formData.service}
+          onChange={handleChange}
+          aria-label="service"
+          required
+          disabled={!formData.serviceType}
+        >
+          <option value="">
+            {formData.serviceType
+              ? "Select Service"
+              : "Select Service Type first"}
+          </option>
+          {currentSubOptions.map((opt) => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Date */}
       <div className="input-box date-box">
         <FaCalendarDays className="input-icon" />
         <input
@@ -152,6 +251,7 @@ function AppointmentForm() {
         />
       </div>
 
+      {/* Time */}
       <div className="input-box time-box">
         <FaClock className="input-icon" />
         <input
@@ -167,6 +267,7 @@ function AppointmentForm() {
         />
       </div>
 
+      {/* Message */}
       <div className="input-box msg-box">
         <FaStickyNote className="input-icon msg-icon" />
         <textarea
@@ -181,9 +282,14 @@ function AppointmentForm() {
         ></textarea>
       </div>
 
+      {/* Submit */}
       <div className="submit-box">
-        <button type="submit" className="submit-btn btn">
-          Submit
+        <button
+          type="submit"
+          className="submit-btn btn"
+          disabled={status === "Submitting..."}
+        >
+          {status === "Submitting..." ? "Submitting..." : "Submit"}
         </button>
         {status && <p className="submit-confirm-msg">{status}</p>}
       </div>

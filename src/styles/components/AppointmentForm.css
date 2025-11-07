@@ -2,7 +2,6 @@
   max-width: 550px;
   padding: 1.875rem;
   background: #f5f8fa;
-  /* background: var(--clr-bg-dark); */
   border-radius: 12px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -10,6 +9,7 @@
     'name number'
     'email email'
     'age gender'
+    'serviceType serviceSub'
     'date time'
     'msg msg'
     'submit submit';
@@ -50,6 +50,14 @@
 
 .submit-box {
   grid-area: submit;
+}
+
+.service-type-box {
+  grid-area: serviceType;
+}
+
+.service-sub-box {
+  grid-area: serviceSub;
 }
 
 .input-box {
@@ -150,38 +158,25 @@
 /* @media (max-width: 768px) {} */
 
 /* sm */
-/* @media (max-width: 640px) {} */
-
-/* xs */
-@media (max-width: 475px) {
+@media (max-width: 640px) {
   .appointment-form {
     padding: 1.25rem;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'name'
-      'number'
-      'email'
-      'age'
-      'gender'
-      'date'
-      'time'
-      'msg'
-      'submit';
     gap: 0.5rem;
+    width: 100%;
   }
 
   .input-icon:not(.msg-icon) {
-    font-size: var(--size-sm);
+    font-size: var(--size-xs);
   }
 
   .input-icon.msg-icon {
-    font-size: var(--size-sm);
+    font-size: var(--size-xs);
   }
 
   .input-box input,
   .input-box select,
   .input-box textarea {
-    font-size: var(--size-sm);
+    font-size: var(--size-xs);
   }
 
   .submit-box {
@@ -189,6 +184,25 @@
   }
 
   .submit-box .submit-btn {
-    font-size: var(--size-sm);
+    font-size: var(--size-xs);
+  }
+}
+
+/* xs */
+@media (max-width: 475px) {
+  .appointment-form {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'name'
+      'number'
+      'email'
+      'age'
+      'gender'
+      'serviceType'
+      'serviceSub'
+      'date'
+      'time'
+      'msg'
+      'submit';
   }
 }

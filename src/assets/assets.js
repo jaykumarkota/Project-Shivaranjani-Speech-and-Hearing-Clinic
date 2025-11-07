@@ -5,7 +5,7 @@ import ex_sliding_img2 from "./ex-sliding-img2.jpg";
 import hearing_logo from "./hearing-logo.png";
 import speech_logo from "./speech-logo.png";
 import calender_logo from "./calender-logo.png";
-
+import doctor_consulting from "./doctor-consulting.png";
 import hear_large_screen from "./hear-large-screen.png";
 import hear_mini_screen from "./hear-mini-screen.png";
 import speech_large_screen from "./speech-large-screen.png";
@@ -19,6 +19,7 @@ export const assets = {
   hearing_logo,
   speech_logo,
   calender_logo,
+  doctor_consulting,
 };
 
 export const slideImages = [

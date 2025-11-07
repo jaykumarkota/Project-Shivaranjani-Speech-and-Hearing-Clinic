@@ -27,14 +27,16 @@ function Navbar() {
 
   return (
     <nav className="navbar container">
-      <div className="logo">
-        <img src={assets.clinic_logo} alt="logo" className="logo-img" />
-        <h2 className="logo-title">
-          Shivaranjani
-          <br />
-          Speech & Hearing Clinic
-        </h2>
-      </div>
+      <Link to="/">
+        <div className="logo">
+          <img src={assets.clinic_logo} alt="logo" className="logo-img" />
+          <h2 className="logo-title">
+            Shivaranjani
+            <br />
+            Speech & Hearing Clinic
+          </h2>
+        </div>
+      </Link>
       <ul
         id="navlinks"
         className={`navlinks ${isMenuOpen ? "show" : ""}`}

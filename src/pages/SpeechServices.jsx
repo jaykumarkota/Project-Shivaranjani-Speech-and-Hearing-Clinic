@@ -1,7 +1,6 @@
 import "../styles/pages/SpeechServices.css";
 import React from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 
 // const services = [
 //   //   {
@@ -172,7 +171,7 @@ import { Helmet } from "react-helmet-async";
 //   //     "Our compassionate approach helps patients regain independence and confidence."
 //   // }
 // ];
-export const services = [
+export const speechServiceContents = [
   // {
   //   title: "Speech Services",
   //   description:
@@ -346,7 +345,7 @@ function SpeechServices() {
         Clinic.
       </p>
       <div className="services-grid" role="list">
-        {services.map((service, index) => {
+        {speechServiceContents.map((service, index) => {
           return (
             <React.Fragment key={service.title}>
               <h3 className="service-title-small">{service.title}</h3>
@@ -371,7 +370,7 @@ function SpeechServices() {
                   <p className="service-desc2">{service.extra}</p>
                   <Link
                     className="service-book-btn btn"
-                    to="/"
+                    to="/services/book"
                     aria-label={`Book appointment for ${service.title}`}
                   >
                     Book Now

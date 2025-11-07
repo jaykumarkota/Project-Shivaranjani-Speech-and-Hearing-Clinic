@@ -1,4 +1,4 @@
-.speech-services {
+.hearing-services {
   padding: 3.75rem 1.25rem;
   /* background: #ccc; */
   /* background-color: #f9f9f9; */
@@ -6,12 +6,12 @@
   text-align: center;
 }
 
-.speech-services-title {
+.hearing-services-title {
   font-size: var(--size-4xl);
   color: var(--clr-primary);
 }
 
-.speech-services-subtitle {
+.hearing-services-subtitle {
   max-width: 60ch;
   margin: 1rem auto 2rem;
   font-size: var(--size-base);
@@ -36,6 +36,9 @@
     'img-cont-11 service-cont-11'
     'service-cont-12 img-cont-12'
     'img-cont-13 service-cont-13'
+    /* 'service-cont-14 img-cont-14' */
+    /* 'img-cont-15 service-cont-15' */
+    /* 'service-cont-16 img-cont-16' */
   ;
   /* column-gap: 20px; */
   row-gap: 30px;
@@ -98,6 +101,18 @@
   grid-area: img-cont-13;
 }
 
+/* .img-cont-14 {
+  grid-area: img-cont-14;
+} */
+
+/* .img-cont-15 {
+  grid-area: img-cont-15;
+}
+
+.img-cont-16 {
+  grid-area: img-cont-16;
+} */
+
 
 .service-cont-1 {
   grid-area: service-cont-1;
@@ -151,6 +166,19 @@
   grid-area: service-cont-13;
 }
 
+/* .service-cont-14 {
+  grid-area: service-cont-14;
+} */
+
+/* 
+.service-cont-15 {
+  grid-area: service-cont-15;
+} */
+/* 
+.service-cont-16 {
+  grid-area: service-cont-16;
+} */
+
 
 .service-card {
   text-align: center;
@@ -187,7 +215,7 @@
   opacity: 0.1;
 }
 
-.service-content {
+.service-content:not() {
   margin: auto 0;
   height: 100%;
   width: 100%;
@@ -211,7 +239,7 @@
 }
 
 .service-description {
-  font-size: var(--size-sm);
+  font-size: var(--size-xs);
 }
 
 .service-desc1 {
@@ -234,15 +262,15 @@
 
 /* lg */
 @media (max-width: 1024px) {
-  .speech-services {
+  .hearing-services {
     padding: 2.5rem 0.93rem;
   }
 
-  .speech-services-title {
+  .hearing-services-title {
     font-size: var(--size-3xl);
   }
 
-  .speech-services-subtitle {
+  .hearing-services-subtitle {
     margin: 1.5rem auto;
     font-size: var(--size-sm);
   }
@@ -285,16 +313,16 @@
 /* sm */
 @media (max-width: 640px) {
 
-  .speech-services-title {
+  .hearing-services-title {
     font-size: var(--size-2xl);
   }
 
-  .speech-services-subtitle {
+  .hearing-services-subtitle {
     margin: 1rem auto;
     font-size: var(--size-sm);
   }
 
-  .speech-services {
+  .hearing-services {
     padding: 2rem 1rem;
   }
 
@@ -319,10 +347,6 @@
     padding: 1.875rem 1.25rem;
   }
 
-  .service-description {
-    font-size: var(--size-xs);
-  }
-
   .service-title-small {
     font-size: var(--size-lg);
   }
@@ -344,11 +368,11 @@
 /* xs */
 @media (max-width: 475px) {
 
-  .speech-services-title {
+  .hearing-services-title {
     font-size: var(--size-2xl);
   }
 
-  .speech-services-subtitle {
+  .hearing-services-subtitle {
     margin: 1rem auto;
     font-size: var(--size-xs);
   }

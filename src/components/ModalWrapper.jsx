@@ -6,9 +6,9 @@ function ModalWrapper() {
   const [isOpen, setIsOpen] = useState(false);
 
   // Open modal when page loads
-  // useEffect(() => {
-  //   setIsOpen(true);
-  // }, []);
+  useEffect(() => {
+    setIsOpen(true);
+  }, []);
 
   const closeModal = () => setIsOpen(false);
 

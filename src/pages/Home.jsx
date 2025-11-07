@@ -5,8 +5,8 @@ import ModalWrapper from "../components/ModalWrapper";
 import FormSection from "../components/FormSection";
 import Testimonial from "../components/Testimonial";
 import FAQ from "../components/Faq";
-import Footer from "../components/Footer";
 import Location from "../components/Location";
+import Services from "../components/Services";
 
 function Home() {
   return (
@@ -14,6 +14,7 @@ function Home() {
       <ModalWrapper />
       <ServicesList />
       <Slider />
+      <Services />
       <MiniAbout />
       <FormSection />
       <Testimonial />
