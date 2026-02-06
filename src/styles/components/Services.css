@@ -153,13 +153,13 @@
   font-size: 0.96rem;
 }
 
+
 .hs-features li::before {
-  content: "•";
+  content: "✔";
   position: absolute;
   left: 0;
-  color: var(--clr-btn);
+  color: var(--clr-green);
 }
-
 
 .hs-ctas {
   display: flex;
@@ -167,14 +167,13 @@
   flex-wrap: wrap;
 }
 
-
 .hs-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
   border-radius: 30px;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   font-size: 0.95rem;
   transition: all 0.3s ease;
 }

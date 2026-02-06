@@ -3,6 +3,8 @@ import "../styles/components/Services.css";
 import { FaEarListen } from "react-icons/fa6";
 import { FaComments } from "react-icons/fa";
 import { MdOutlineCalendarToday } from "react-icons/md";
+import { FaHeadphones } from "react-icons/fa";
+import { RiSpeakFill } from "react-icons/ri";
 
 
 function Services() {
@@ -81,6 +83,9 @@ function Services() {
             <div className="hs-ctas">
               <Link
                 to="/services/book"
+                state={{
+                  serviceType: "hearing",
+                }}
                 className="btn hs-btn primary"
                 data-ga="appointment-hearing"
                 aria-label="Book hearing appointment"
@@ -102,7 +107,6 @@ function Services() {
           <figure className="hs-media" aria-hidden="true">
             <img
               src="https://northernvirginiafamilymedicine.com/wp-content/uploads/2018/11/PrimaryCareWeb.jpg"
-
               alt="Audiologist checking hearing aid on patient"
               loading="lazy"
               width="800"
@@ -111,13 +115,12 @@ function Services() {
           </figure>
         </article>
 
-        {/* Speech card */}
-        <article className="hs-card speech" role="listitem" aria-labelledby="hs-speech-title">
+        {/* Implants card */}
+        <article className="hs-card speech" role="listitem" aria-labelledby="hs-implant-title">
           <figure className="hs-media" aria-hidden="true">
             <img
-              // src="/assets/images/speech-demo.jpg"
               src="https://northernvirginiafamilymedicine.com/wp-content/uploads/2018/11/PrimaryCareWeb.jpg"
-              alt="Speech therapist working with a child"
+              alt="Cochlear implant consultation"
               loading="lazy"
               width="800"
               height="600"
@@ -125,7 +128,46 @@ function Services() {
           </figure>
 
           <div className="hs-card-content">
-            <div className="hs-icon" aria-hidden="true"><FaComments /></div>
+            <div className="hs-icon" aria-hidden="true"><FaHeadphones /></div>
+            <h3 id="hs-implant-title">Implant Services</h3>
+            <p className="hs-lead">
+              Advanced implant solutions designed to restore hearing and improve speech
+              understanding for individuals with severe hearing loss.
+            </p>
+
+            <ul className="hs-features" aria-label="Implant services">
+              <li>Cochlear implant evaluation & candidacy assessment</li>
+              <li>Pre-implant counseling and diagnostic support</li>
+              <li>Post-implant mapping, tuning & rehabilitation therapy</li>
+            </ul>
+
+            <div className="hs-ctas">
+              <Link
+                to="/services/book"
+                state={{ serviceType: "implant" }}
+                className="btn hs-btn primary"
+                data-ga="appointment-hearing"
+                aria-label="Book implant appointment"
+              >
+                <MdOutlineCalendarToday className="btn-icon" /> Book Appointment
+              </Link>
+
+              <Link
+                to="/services/hearing"
+                className="btn hs-btn ghost"
+                data-ga="learn-hearing"
+                aria-label="Learn more about implant services"
+              >
+                Learn more
+              </Link>
+            </div>
+          </div>
+        </article>
+
+        {/* Speech card */}
+        <article className="hs-card hearing" role="listitem" aria-labelledby="hs-speech-title">
+          <div className="hs-card-content">
+            <div className="hs-icon" aria-hidden="true"><RiSpeakFill /></div>
             <h3 id="hs-speech-title">Speech & Language Therapy</h3>
             <p className="hs-lead">
               Individualised therapy for children and adults focusing on clarity,
@@ -141,6 +183,7 @@ function Services() {
             <div className="hs-ctas">
               <Link
                 to="/services/book"
+                state={{ serviceType: "speech" }}
                 className="btn hs-btn primary"
                 data-ga="appointment-speech"
                 aria-label="Book speech appointment"
@@ -158,14 +201,24 @@ function Services() {
               </Link>
             </div>
           </div>
+
+          <figure className="hs-media" aria-hidden="true">
+            <img
+              src="https://northernvirginiafamilymedicine.com/wp-content/uploads/2018/11/PrimaryCareWeb.jpg"
+              alt="Speech therapist working with a child"
+              loading="lazy"
+              width="800"
+              height="600"
+            />
+          </figure>
         </article>
-      </div>
+      </div >
 
       {/* Accent SVG wave */}
       {/* <svg className="hs-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
         <path d="M0,40 C240,0 480,80 720,40 C960,0 1200,80 1440,40 L1440 80 L0 80 Z" fill="var(--wave-fill, #f4f7fb)"></path>
       </svg> */}
-    </section>
+    </section >
   );
 };
 

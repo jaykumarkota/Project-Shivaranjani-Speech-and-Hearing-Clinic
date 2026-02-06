@@ -1,0 +1,73 @@
+.about-title {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: var(--size-3xl);
+  /* background-image: linear-gradient(135deg, var(--clr-primary), var(--clr-btn));
+  background-size: cover;
+  background-clip: text;
+  --webkit-background-clip: text;
+  color: transparent;
+  display: inline-block; */
+  color: var(--clr-primary);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  column-gap: 5rem;
+  align-items: center;
+
+}
+
+.about-desc,
+.our-vision-desc {
+  max-width: 75ch;
+  font-size: var(--size-base);
+}
+
+.our-vision {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.our-vision-title {
+  text-align: left;
+  font-size: var(--size-xl);
+  margin: 0.5rem 0 1rem;
+}
+
+.about-grid-right {
+  /* height: 28.125rem;
+  width: 25rem; */
+  height: 100%;
+  width: 100%;
+}
+
+.about-grid-left-img {
+  object-fit: cover;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+
+/* -----------responsiveness----------- */
+/* 2xl */
+/* @media (max-width: 1536px) {} */
+
+/* xl */
+/* @media (max-width: 1280px) {} */
+
+/* lg */
+/* @media (max-width: 1024px) {} */
+
+/* md */
+/* @media (max-width: 768px) {} */
+
+/* sm */
+/* @media (max-width: 640px) {} */
+
+/* xs */
+/* @media (max-width: 475px) {} */

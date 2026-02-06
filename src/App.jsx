@@ -1,12 +1,16 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import About from './pages/About'
+import About from './pages/About';
+import Contact from './pages/Contact';
+import ServicesPage from './pages/ServicesPage';
 import MainLayout from './Layouts/MainLayout';
 import HearingServices from "./pages/HearingServices";
 import SpeechServices from "./pages/SpeechServices";
 import BookServices from "./components/FormSection";
 import Location from './components/Location';
-// import Services from "./pages/Services";
+import AboutDocter from './components/AboutPage/AboutDocter';
+
+
 
 function App() {
 
@@ -15,18 +19,17 @@ function App() {
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        {/* <Route path="/services" element={<Services />} /> */}
+        <Route path="/services" element={<ServicesPage />} />
         <Route path="/location" element={<Location />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
-
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about/about-docter" element={<AboutDocter />} />
 
         {/* services pages */}
-        {/* <Route path="/services" element={<Services />} /> */} {/* optional */}
         <Route path="/services/hearing" element={<HearingServices />} />
         <Route path="/services/speech" element={<SpeechServices />} />
         <Route path="/services/book" element={<BookServices />} />
       </Route >
-      {/* <Route path="*" element={<h2>404 – Page Not Found</h2>} /> */}
+      <Route path="*" element={<h2>404 – Page Not Found</h2>} />
     </Routes>
 
   )

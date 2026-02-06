@@ -8,8 +8,7 @@
   --clr-btn: #0157AA;
   --clr-grey: #546477;
   --clr-border: #ccc;
-
-
+  --clr-green: green;
   /* sizes */
   --size-xxs: 0.5rem;
   --size-xs: 0.75rem;
@@ -26,6 +25,20 @@
   --size-8xl: 6rem;
   --size-9xl: 8rem;
   --size-10xl: 10rem;
+}
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--clr-primary);
+  outline: 1px solid var(--clr-primary);
 }
 
 * {

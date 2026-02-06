@@ -27,7 +27,7 @@ function Location() {
           aria-label="Google Map showing Shivaranjani Speech and Hearing Clinic location">
           <iframe
             title="Shivaranjani Speech & Hearing Clinic Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.1982672673203!2d78.5774923861027!3d17.402270208437198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9f0036bd9821%3A0x2455d0cbcd8b8672!2sNirmala%20Kubera%20Heights!5e0!3m2!1sen!2sin!4v1760465858784!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d951.8004837419511!2d78.5821943!3d17.4020941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9f00690e2a7d%3A0x513fdf3170598b4b!2sShivaranjani%20Speech%20and%20Hearing%20Clinic!5e0!3m2!1sen!2sin!4v1768296553474!5m2!1sen!2sin"
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

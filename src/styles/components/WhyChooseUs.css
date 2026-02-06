@@ -1,0 +1,323 @@
+/* Why Choose Us Section Styles */
+
+.why-choose-section {
+    padding: 100px 20px;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.why-choose-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.why-choose-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Container */
+.why-choose-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 70px;
+    animation: fadeInDown 0.8s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-tag {
+    display: inline-block;
+    color: #3b82f6;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding: 6px 16px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.section-tag:hover {
+    background: rgba(59, 130, 246, 0.15);
+    transform: translateY(-2px);
+}
+
+.section-title {
+    font-size: 2.75rem;
+    color: #0f172a;
+    margin: 0 0 20px 0;
+    font-weight: 800;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #0f172a 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-subtitle {
+    font-size: 1.15rem;
+    color: #64748b;
+    margin: 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+/* Reasons Grid */
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+/* Reason Cards */
+.reason-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Staggered Animation */
+.reason-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.reason-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.reason-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.reason-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.reason-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.reason-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reason-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
+}
+
+/* Card Image */
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: visible;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));
+    z-index: 10;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.3s ease;
+}
+
+.reason-card:hover .card-image {
+    transform: scale(1.1);
+    filter: brightness(1.05);
+}
+
+/* Card Icon */
+.card-icon {
+    position: absolute;
+    bottom: -25px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    z-index: 100;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reason-card:hover .card-icon {
+    transform: rotate(360deg) scale(1.1);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+}
+
+/* Card Content */
+.card-content {
+    padding: 35px 30px 30px;
+    position: relative;
+    z-index: 1;
+    background: white;
+}
+
+.card-title {
+    font-size: 1.35rem;
+    color: #0f172a;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+
+.reason-card:hover .card-title {
+    color: #3b82f6;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* Card Accent */
+.card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.reason-card:hover .card-accent {
+    transform: scaleX(1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .why-choose-section {
+        padding: 70px 16px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .reasons-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .card-image-wrapper {
+        height: 200px;
+    }
+
+    .card-content {
+        padding: 30px 24px 24px;
+    }
+
+    .card-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.6rem;
+        bottom: -22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-choose-section {
+        padding: 60px 12px;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .reasons-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .card-image-wrapper {
+        height: 180px;
+    }
+
+    .card-content {
+        padding: 28px 20px 20px;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-description {
+        font-size: 0.95rem;
+    }
+}

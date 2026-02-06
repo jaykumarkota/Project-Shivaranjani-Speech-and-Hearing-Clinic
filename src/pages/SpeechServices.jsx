@@ -371,6 +371,10 @@ function SpeechServices() {
                   <Link
                     className="service-book-btn btn"
                     to="/services/book"
+                    state={{
+                      serviceType: "speech",
+                      service: service.title
+                    }}
                     aria-label={`Book appointment for ${service.title}`}
                   >
                     Book Now

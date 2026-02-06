@@ -1,5 +1,12 @@
-function About() {
+import AboutHero from "../components/AboutPage/AboutHero";
+import AboutDesc from "../components/AboutPage/AboutDesc";
 
-  return (<div>About  page</div>);
+
+function About() {
+  return (<>
+    <AboutHero />
+    <AboutDesc />
+  </>
+  );
 }
-export default About
+export default About;

@@ -44,6 +44,19 @@ export const servicesListImgs = {
   book_mini_screen,
 };
 
+export const serviceOptions = {
+  hearing: [
+    { value: "Hearing Aid Services", label: "Hearing Aid Services" },
+    { value: "hearing_therapy", label: "Hearing Therapy" },
+    { value: "hearing_assessment", label: "Hearing Assessment" },
+  ],
+  speech: [
+    { value: "articulation_therapy", label: "Articulation Therapy" },
+    { value: "language_therapy", label: "Language Therapy" },
+    { value: "Voice Therapy", label: "Voice Therapy" },
+  ],
+};
+
 export const testimonials = [
   {
     id: 1,

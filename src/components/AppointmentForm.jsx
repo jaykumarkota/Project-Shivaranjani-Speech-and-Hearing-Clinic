@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import { serviceOptions } from "../assets/assets.js";
 import {
   FaUserLarge,
   FaVenusMars,
@@ -13,21 +15,28 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { GiAges } from "react-icons/gi";
 import "../styles/components/AppointmentForm.css";
 
+
 function AppointmentForm() {
+
+  const location = useLocation();
+  const initialServiceType = location.state?.serviceType || "";
+  const initialService = location.state?.service || "";
+
   const [formData, setFormData] = useState({
     name: "",
     number: "",
     email: "",
     age: "",
     gender: "",
-    serviceType: "",
-    service: "",
+    serviceType: initialServiceType,
+    service: initialService,
     date: "",
     time: "",
     message: "",
   });
 
   const [status, setStatus] = useState("");
+  const [errors, setErrors] = useState({});
 
   // Date setup
   const today = new Date().toISOString().split("T")[0];
@@ -35,59 +44,181 @@ function AppointmentForm() {
   maxDate.setDate(maxDate.getDate() + 30);
   const max = maxDate.toISOString().split("T")[0];
 
-  // Service options
-  const serviceOptions = {
-    hearing: [
-      { value: "hearing_aids", label: "Hearing Aids" },
-      { value: "hearing_therapy", label: "Hearing Therapy" },
-      { value: "hearing_assessment", label: "Hearing Assessment" },
-    ],
-    speech: [
-      { value: "articulation_therapy", label: "Articulation Therapy" },
-      { value: "language_therapy", label: "Language Therapy" },
-      { value: "voice_therapy", label: "Voice Therapy" },
-    ],
+  // Generate time slots from 10:00 AM to 8:00 PM in 30-minute intervals
+  const generateTimeSlots = () => {
+    const slots = [];
+    for (let hour = 10; hour <= 20; hour++) {
+      for (let minute = 0; minute < 60; minute += 30) {
+        if (hour === 20 && minute > 0) break; // Stop at 20:00
+        const timeString = `${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}`;
+        slots.push(timeString);
+      }
+    }
+    return slots;
+  };
+
+  const timeSlots = generateTimeSlots();
+
+
+  // Validation functions
+  const validateField = (name, value) => {
+    let error = "";
+
+    switch (name) {
+      case "name":
+        if (!value.trim()) {
+          error = "Name is required";
+        } else if (!/^[A-Za-z ]{2,50}$/.test(value)) {
+          error = "Name should be 2-50 letters only";
+        }
+        break;
+
+      case "number":
+        if (!value.trim()) {
+          error = "Phone number is required";
+        } else if (!/^[0-9]{10}$/.test(value)) {
+          error = "Enter a valid 10-digit phone number";
+        }
+        break;
+
+      case "email":
+        if (!value.trim()) {
+          error = "Email is required";
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+          error = "Enter a valid email address";
+        }
+        break;
+
+      case "age":
+        const ageNum = parseInt(value);
+        if (!value) {
+          error = "Age is required";
+        } else if (isNaN(ageNum) || ageNum < 1 || ageNum > 100) {
+          error = "Age must be between 1 and 100";
+        }
+        break;
+
+      case "gender":
+        if (!value) {
+          error = "Please select a gender";
+        }
+        break;
+
+      case "serviceType":
+        if (!value) {
+          error = "Please select a service type";
+        }
+        break;
+
+      case "service":
+        if (!value) {
+          error = "Please select a service";
+        }
+        break;
+
+      case "date":
+        if (!value) {
+          error = "Please select an appointment date";
+        } else if (value < today || value > max) {
+          error = "Date must be within the next 30 days";
+        }
+        break;
+
+      case "time":
+        if (!value) {
+          error = "Please select an appointment time";
+        }
+        break;
+
+      case "message":
+        if (value && (value.length < 5 || value.length > 300)) {
+          error = "Message should be between 5 and 300 characters";
+        }
+        break;
+
+      default:
+        break;
+    }
+
+    return error;
   };
 
   // Handle field change
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(name, value)
 
     // Clear subservice when main type changes
     if (name === "serviceType") {
       setFormData((prev) => ({ ...prev, serviceType: value, service: "" }));
+      setErrors((prev) => ({ ...prev, serviceType: "", service: "" }));
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
+
+      // Validate field on change
+      const error = validateField(name, value);
+      setErrors((prev) => ({ ...prev, [name]: error }));
     }
+  };
+
+  // Validate all fields
+  const validateForm = () => {
+    const newErrors = {};
+    let isValid = true;
+
+    Object.keys(formData).forEach((key) => {
+      if (key !== "message") { // message is optional
+        const error = validateField(key, formData[key]);
+        if (error) {
+          newErrors[key] = error;
+          isValid = false;
+        }
+      } else if (formData[key]) {
+        // Validate message only if it's provided
+        const error = validateField(key, formData[key]);
+        if (error) {
+          newErrors[key] = error;
+          isValid = false;
+        }
+      }
+    });
+
+    setErrors(newErrors);
+    return isValid;
   };
 
   // Submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Clear previous status
+    setStatus("");
+
+    // Validate form
+    if (!validateForm()) {
+      setStatus("❌ Please fix the errors before submitting");
+      return;
+    }
+
     setStatus("Submitting...");
 
     try {
-      const webAppURL = "https://script.google.com/macros/s/AKfycbxhLpSOObf7EzxciLobQ6Kai1Nzdd1cIZW3n_sKGyxmc4I6yd_mWMYiSWdINZjvKsdb/exec"; // replace with your deployed script URL
-
-      // For localhost testing: use no-cors (cannot read response)
-      const isLocalhost = window.location.hostname === "localhost";
+      const webAppURL = import.meta.env.VITE_GOOGLE_SHEETS_URL;
+      if (!webAppURL) {
+        throw new Error("Google Sheets URL not configured");
+      }
 
       const response = await fetch(webAppURL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(formData),
-        mode: isLocalhost ? "no-cors" : "cors",
-        mode: "no-cors" // ✅ localhost uses no-cors, production uses cors
+        mode: "no-cors",
       });
 
-      if (!isLocalhost) {
-        // Only check response for production (CORS allowed)
-        const result = await response.json();
-        if (result.status !== "success") {
-          throw new Error(result.message || "Submission failed");
-        }
-      }
-
+      // Since we're using no-cors, we can't read the response
+      // Assume success if no error is thrown
       setStatus("✅ Submitted successfully!");
       setFormData({
         name: "",
@@ -101,6 +232,10 @@ function AppointmentForm() {
         time: "",
         message: "",
       });
+      setErrors({});
+
+      // Clear success message after 5 seconds
+      setTimeout(() => setStatus(""), 5000);
     } catch (error) {
       console.error("Form submission error:", error);
       setStatus("❌ Submission failed. Please try again.");
@@ -116,7 +251,7 @@ function AppointmentForm() {
         : [];
 
   return (
-    <form className="appointment-form" onSubmit={handleSubmit}>
+    <form className="appointment-form" onSubmit={handleSubmit} noValidate>
       {/* Name */}
       <div className="input-box name-box">
         <FaUserLarge className="input-icon" />
@@ -126,11 +261,10 @@ function AppointmentForm() {
           value={formData.name}
           onChange={handleChange}
           placeholder="Your Name"
-          pattern="^[A-Za-z ]{2,50}$"
-          title="Name should be 2–50 letters only"
           aria-label="name"
-          required
+          className={errors.name ? "input-error" : ""}
         />
+        {errors.name && <span className="error-message">{errors.name}</span>}
       </div>
 
       {/* Phone */}
@@ -142,25 +276,28 @@ function AppointmentForm() {
           value={formData.number}
           onChange={handleChange}
           placeholder="Your Number"
-          pattern="^[0-9]{10}$"
-          title="Enter a 10-digit phone number"
           aria-label="number"
-          required
+          className={errors.number ? "input-error" : ""}
         />
+        {errors.number && <span className="error-message">{errors.number}</span>}
       </div>
 
       {/* Email */}
       <div className="input-box email-box">
-        <MdEmail className="input-icon" />
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Your Email"
-          aria-label="email"
-          required
-        />
+        <div className="input-wrapper">
+          <MdEmail className="input-icon" />
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Your Email"
+            aria-label="email"
+            className={errors.email ? "input-error" : ""}
+          />
+
+        </div>
+        {errors.email && <span className="error-message">{errors.email}</span>}
       </div>
 
       {/* Age */}
@@ -175,8 +312,9 @@ function AppointmentForm() {
           min="1"
           max="100"
           aria-label="age"
-          required
+          className={errors.age ? "input-error" : ""}
         />
+        {errors.age && <span className="error-message">{errors.age}</span>}
       </div>
 
       {/* Gender */}
@@ -187,13 +325,14 @@ function AppointmentForm() {
           value={formData.gender}
           onChange={handleChange}
           aria-label="gender"
-          required
+          className={errors.gender ? "input-error" : ""}
         >
           <option value="">Select Gender</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
           <option value="other">Other</option>
         </select>
+        {errors.gender && <span className="error-message">{errors.gender}</span>}
       </div>
 
       {/* Service Type */}
@@ -204,12 +343,13 @@ function AppointmentForm() {
           value={formData.serviceType}
           onChange={handleChange}
           aria-label="service type"
-          required
+          className={errors.serviceType ? "input-error" : ""}
         >
           <option value="">Select Service Type</option>
           <option value="hearing">Hearing Service</option>
           <option value="speech">Speech Service</option>
         </select>
+        {errors.serviceType && <span className="error-message">{errors.serviceType}</span>}
       </div>
 
       {/* Sub Service */}
@@ -220,8 +360,8 @@ function AppointmentForm() {
           value={formData.service}
           onChange={handleChange}
           aria-label="service"
-          required
           disabled={!formData.serviceType}
+          className={errors.service ? "input-error" : ""}
         >
           <option value="">
             {formData.serviceType
@@ -234,6 +374,7 @@ function AppointmentForm() {
             </option>
           ))}
         </select>
+        {errors.service && <span className="error-message">{errors.service}</span>}
       </div>
 
       {/* Date */}
@@ -247,24 +388,29 @@ function AppointmentForm() {
           min={today}
           max={max}
           aria-label="appointment date"
-          required
+          className={errors.date ? "input-error" : ""}
         />
+        {errors.date && <span className="error-message">{errors.date}</span>}
       </div>
 
-      {/* Time */}
+      {/* Time - Changed to Select */}
       <div className="input-box time-box">
         <FaClock className="input-icon" />
-        <input
-          type="time"
+        <select
           name="time"
           value={formData.time}
           onChange={handleChange}
-          min="10:00"
-          max="20:00"
-          step="900"
           aria-label="appointment time"
-          required
-        />
+          className={errors.time ? "input-error" : ""}
+        >
+          <option value="">Select Time</option>
+          {timeSlots.map((slot) => (
+            <option key={slot} value={slot}>
+              {slot}
+            </option>
+          ))}
+        </select>
+        {errors.time && <span className="error-message">{errors.time}</span>}
       </div>
 
       {/* Message */}
@@ -274,12 +420,12 @@ function AppointmentForm() {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="Enter Your Message"
+          placeholder="Enter Your Message (Optional)"
           rows="3"
-          minLength="5"
-          maxLength="300"
           aria-label="message"
+          className={errors.message ? "input-error" : ""}
         ></textarea>
+        {errors.message && <span className="error-message">{errors.message}</span>}
       </div>
 
       {/* Submit */}
