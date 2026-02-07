@@ -122,10 +122,57 @@
    RESPONSIVE DESIGN
 ---------------------------------------------- */
 
-@media (max-width: 950px) {
+/* 2xl */
+@media (max-width: 1536px) {
+  .hero-inner {
+    padding: 2.5rem;
+  }
+
+  .hero-desc {
+    font-size: 1.02rem;
+  }
+}
+
+/* xl */
+@media (max-width: 1280px) {
+  .hero-inner {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: 0.8fr 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .clinic-name {
+    font-size: 1.8rem;
+  }
+
+  .hero-desc {
+    font-size: 0.98rem;
+  }
+}
+
+/* md */
+@media (max-width: 768px) {
   .hero-inner {
     grid-template-columns: 1fr;
+    gap: 2rem;
     padding: 2rem;
+  }
+
+  .hero-left-img {
+    height: 300px;
+    /* Limit image height on tablet/mobile */
   }
 
   .clinic-name {
@@ -138,6 +185,11 @@
     align-items: center;
   }
 
+  .hero-desc {
+    text-align: center;
+    max-width: 100%;
+  }
+
   .hero-ctas {
     justify-content: center;
   }
@@ -147,16 +199,50 @@
   }
 }
 
-@media (max-width: 550px) {
+/* sm */
+@media (max-width: 640px) {
   .hero-inner {
-    padding: 1.6rem;
+    padding: 1.5rem;
   }
 
   .clinic-name {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
   }
 
-  .hero-img {
-    border-radius: 16px;
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+  }
+
+  .quick-info {
+    gap: 1rem;
+  }
+}
+
+/* xs */
+@media (max-width: 475px) {
+  .hero-left-img {
+    height: 250px;
+  }
+
+  .clinic-name {
+    font-size: 1.3rem;
+  }
+
+  .hero-desc {
+    font-size: 0.9rem;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
   }
 }

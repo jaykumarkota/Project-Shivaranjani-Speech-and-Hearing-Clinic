@@ -1,0 +1,302 @@
+.floating-contact-wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+/* Main Toggle Button */
+.floating-contact-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #112f70;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    order: 2;
+}
+
+.floating-contact-btn:hover {
+    background-color: #0e2560;
+    transform: translateY(-4px);
+}
+
+.floating-contact-btn.active {
+    background: #e53e3e;
+    transform: rotate(90deg);
+}
+
+.btn-icon {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-icon.rotated {
+    transform: rotate(90deg);
+}
+
+/* Contact Options Container */
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    order: 1;
+}
+
+.contact-options.expanded {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Individual Contact Option Button */
+.contact-option-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    border-radius: 50px;
+    background: white;
+    color: var(--option-color);
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    transform: scale(0.8);
+    opacity: 0;
+    min-width: 140px;
+}
+
+.contact-options.expanded .contact-option-btn {
+    animation: slideInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: var(--option-delay);
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.contact-option-btn:hover {
+    transform: translateX(8px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    background: var(--option-color);
+    color: white;
+}
+
+.contact-option-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-option-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+/* ---------------------------------------------
+   RESPONSIVE DESIGN
+---------------------------------------------- */
+
+/* 2xl */
+@media (max-width: 1536px) {
+    .floating-contact-wrapper {
+        bottom: 22px;
+        left: 22px;
+    }
+
+    .floating-contact-btn {
+        width: 58px;
+        height: 58px;
+    }
+}
+
+/* xl */
+@media (max-width: 1280px) {
+    .floating-contact-wrapper {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .floating-contact-btn {
+        width: 56px;
+        height: 56px;
+    }
+
+    .btn-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .contact-option-btn {
+        padding: 11px 16px;
+        min-width: 150px;
+    }
+
+    .contact-option-label {
+        font-size: 0.9rem;
+    }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+    .floating-contact-wrapper {
+        bottom: 18px;
+        left: 18px;
+    }
+
+    .floating-contact-btn {
+        width: 54px;
+        height: 54px;
+    }
+
+    .btn-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .contact-option-btn {
+        padding: 10px 15px;
+        min-width: 140px;
+        gap: 10px;
+    }
+
+    .contact-option-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .contact-option-label {
+        font-size: 0.88rem;
+    }
+}
+
+/* md */
+@media (max-width: 768px) {
+    .floating-contact-wrapper {
+        bottom: 16px;
+        left: 16px;
+    }
+
+    .floating-contact-btn {
+        width: 52px;
+        height: 52px;
+    }
+
+    .btn-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .contact-options {
+        gap: 8px;
+    }
+
+    .contact-option-btn {
+        padding: 10px 14px;
+        min-width: 130px;
+    }
+
+    .contact-option-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .contact-option-label {
+        font-size: 0.85rem;
+    }
+}
+
+/* sm */
+@media (max-width: 640px) {
+    .floating-contact-wrapper {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .floating-contact-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .btn-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .contact-option-btn {
+        padding: 8px 12px;
+        min-width: 110px;
+    }
+
+    .contact-option-label {
+        font-size: 0.8rem;
+    }
+}
+
+/* xs */
+@media (max-width: 475px) {
+    .floating-contact-wrapper {
+        bottom: 12px;
+        left: 12px;
+    }
+
+    .floating-contact-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    .btn-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .contact-options {
+        gap: 7px;
+    }
+
+    .contact-option-btn {
+        padding: 8px 12px;
+        min-width: 110px;
+        gap: 8px;
+    }
+
+    .contact-option-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .contact-option-label {
+        font-size: 0.8rem;
+    }
+}

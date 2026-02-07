@@ -8,6 +8,7 @@ import FAQ from "../components/Faq";
 import Location from "../components/Location";
 import Services from "../components/Services";
 import WhyChooseUs from "../components/WhyChooseUs";
+import Gallery from "../components/Gallery";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <Slider />
       <Services />
       <WhyChooseUs />
+      <Gallery />
       <MiniAbout />
       <FormSection />
       <Testimonial />

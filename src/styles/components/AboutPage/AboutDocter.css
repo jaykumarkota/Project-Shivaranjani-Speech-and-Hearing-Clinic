@@ -465,28 +465,677 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+
+/* 2xl */
+@media (max-width: 1536px) {
+  .about-content-wrapper {
+    max-width: 1100px;
+  }
+
+  .about-header {
+    padding: 70px 20px;
+  }
+
   .about-main-title {
-    font-size: 36px;
+    font-size: 44px;
+  }
+
+  .about-section {
+    padding: 70px 0;
+  }
+}
+
+/* xl */
+@media (max-width: 1280px) {
+  .about-content-wrapper {
+    max-width: 1000px;
+    padding: 0 24px;
+  }
+
+  .about-header {
+    padding: 65px 24px;
+  }
+
+  .about-main-title {
+    font-size: 42px;
   }
 
   .about-subtitle {
-    font-size: 18px;
+    font-size: 20px;
+  }
+
+  .about-section {
+    padding: 65px 0;
+  }
+
+  .about-section-title {
+    font-size: 30px;
+  }
+
+  .about-cert-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .about-special-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+  .about-content-wrapper {
+    max-width: 100%;
+    padding: 0 28px;
+  }
+
+  .about-header {
+    padding: 60px 28px;
+  }
+
+  .about-main-title {
+    font-size: 38px;
+  }
+
+  .about-subtitle {
+    font-size: 19px;
+  }
+
+  .about-header-desc {
+    font-size: 16px;
+  }
+
+  .about-section {
+    padding: 60px 0;
   }
 
   .about-section-title {
     font-size: 28px;
   }
 
-  .about-exp-card {
-    flex-direction: column;
+  .about-degree-title {
+    font-size: 20px;
   }
 
-  .about-award-card {
-    flex-direction: column;
+  .about-exp-title {
+    font-size: 20px;
+  }
+
+  .about-cert-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 18px;
+  }
+
+  .about-special-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* md */
+@media (max-width: 768px) {
+  .about-content-wrapper {
+    padding: 0 20px;
+  }
+
+  .about-header {
+    padding: 50px 20px;
+  }
+
+  .about-main-title {
+    font-size: 34px;
+  }
+
+  .about-subtitle {
+    font-size: 18px;
+  }
+
+  .about-header-desc {
+    font-size: 15px;
+  }
+
+  .about-section {
+    padding: 50px 0;
+  }
+
+  .about-section-header {
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .about-icon-wrapper {
+    width: 52px;
+    height: 52px;
+  }
+
+  .about-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .about-section-title {
+    font-size: 26px;
   }
 
   .about-timeline {
     padding-left: 30px;
+  }
+
+  .about-timeline-dot {
+    left: -46px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .about-timeline-line {
+    left: -40px;
+  }
+
+  .about-education-card,
+  .about-exp-card,
+  .about-special-card,
+  .about-award-card {
+    padding: 24px;
+  }
+
+  .about-degree-title {
+    font-size: 19px;
+  }
+
+  .about-institution {
+    font-size: 16px;
+  }
+
+  .about-exp-card {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-exp-number {
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+
+  .about-exp-title {
+    font-size: 19px;
+  }
+
+  .about-exp-company {
+    font-size: 16px;
+  }
+
+  .about-cert-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .about-cert-card {
+    padding: 24px;
+  }
+
+  .about-cert-badge {
+    width: 64px;
+    height: 64px;
+  }
+
+  .about-cert-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .about-special-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+
+  .about-special-title {
+    font-size: 19px;
+  }
+
+  .about-award-card {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .about-award-icon-box {
+    width: 54px;
+    height: 54px;
+  }
+
+  .about-award-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .about-award-title {
+    font-size: 19px;
+  }
+}
+
+/* sm */
+@media (max-width: 640px) {
+  .about-content-wrapper {
+    padding: 0 18px;
+  }
+
+  .about-header {
+    padding: 44px 18px;
+  }
+
+  .about-main-title {
+    font-size: 30px;
+  }
+
+  .about-subtitle {
+    font-size: 17px;
+  }
+
+  .about-header-desc {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .about-badge {
+    font-size: 12px;
+    padding: 7px 16px;
+  }
+
+  .about-section {
+    padding: 44px 0;
+  }
+
+  .about-section-header {
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+
+  .about-icon-wrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .about-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .about-section-title {
+    font-size: 24px;
+  }
+
+  .about-section-subtitle {
+    font-size: 14px;
+  }
+
+  .about-timeline {
+    padding-left: 26px;
+  }
+
+  .about-timeline-dot {
+    left: -42px;
+    width: 12px;
+    height: 12px;
+    border: 3px solid #fff;
+  }
+
+  .about-timeline-line {
+    left: -36px;
+  }
+
+  .about-education-card {
+    padding: 22px;
+  }
+
+  .about-degree-title {
+    font-size: 18px;
+  }
+
+  .about-institution {
+    font-size: 15px;
+  }
+
+  .about-year-badge {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+
+  .about-card-desc,
+  .about-exp-desc,
+  .about-special-desc,
+  .about-award-desc {
+    font-size: 14px;
+  }
+
+  .about-exp-card {
+    padding: 22px;
+    gap: 18px;
+  }
+
+  .about-exp-number {
+    width: 44px;
+    height: 44px;
+    font-size: 17px;
+  }
+
+  .about-exp-title {
+    font-size: 18px;
+  }
+
+  .about-exp-company {
+    font-size: 15px;
+  }
+
+  .about-exp-duration {
+    font-size: 13px;
+  }
+
+  .about-highlight-item {
+    font-size: 13px;
+  }
+
+  .about-cert-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+  }
+
+  .about-cert-card {
+    padding: 20px;
+  }
+
+  .about-cert-badge {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 16px;
+  }
+
+  .about-cert-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .about-cert-name {
+    font-size: 15px;
+    min-height: 40px;
+  }
+
+  .about-cert-org {
+    font-size: 13px;
+  }
+
+  .about-cert-year {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .about-special-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .about-special-card {
+    padding: 26px;
+  }
+
+  .about-special-icon-box {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 16px;
+  }
+
+  .about-special-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .about-special-title {
+    font-size: 18px;
+  }
+
+  .about-award-card {
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .about-award-icon-box {
+    width: 50px;
+    height: 50px;
+  }
+
+  .about-award-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .about-award-title {
+    font-size: 18px;
+  }
+
+  .about-award-org {
+    font-size: 14px;
+  }
+
+  .about-award-year-tag {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+/* xs */
+@media (max-width: 475px) {
+  .about-content-wrapper {
+    padding: 0 14px;
+  }
+
+  .about-header {
+    padding: 38px 14px;
+  }
+
+  .about-main-title {
+    font-size: 26px;
+  }
+
+  .about-subtitle {
+    font-size: 16px;
+  }
+
+  .about-header-desc {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .about-badge {
+    font-size: 11px;
+    padding: 6px 14px;
+  }
+
+  .about-section {
+    padding: 38px 0;
+  }
+
+  .about-section-header {
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .about-icon-wrapper {
+    width: 44px;
+    height: 44px;
+  }
+
+  .about-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .about-section-title {
+    font-size: 22px;
+  }
+
+  .about-section-subtitle {
+    font-size: 13px;
+  }
+
+  .about-timeline {
+    padding-left: 22px;
+  }
+
+  .about-timeline-dot {
+    left: -38px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+  }
+
+  .about-timeline-line {
+    left: -34px;
+  }
+
+  .about-education-card {
+    padding: 18px;
+  }
+
+  .about-degree-title {
+    font-size: 17px;
+  }
+
+  .about-institution {
+    font-size: 14px;
+  }
+
+  .about-year-badge {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .about-card-desc,
+  .about-exp-desc,
+  .about-special-desc,
+  .about-award-desc {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .about-tag-blue {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  .about-exp-card {
+    padding: 18px;
+    gap: 14px;
+  }
+
+  .about-exp-number {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .about-exp-title {
+    font-size: 17px;
+  }
+
+  .about-exp-company {
+    font-size: 14px;
+  }
+
+  .about-exp-duration {
+    font-size: 12px;
+  }
+
+  .about-highlight-item {
+    font-size: 12px;
+  }
+
+  .about-highlight-icon {
+    font-size: 14px;
+  }
+
+  .about-cert-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .about-cert-card {
+    padding: 18px;
+  }
+
+  .about-cert-badge {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 14px;
+  }
+
+  .about-cert-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .about-cert-name {
+    font-size: 14px;
+    min-height: auto;
+  }
+
+  .about-cert-org {
+    font-size: 12px;
+  }
+
+  .about-cert-year {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .about-special-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .about-special-card {
+    padding: 22px;
+  }
+
+  .about-special-icon-box {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 14px;
+  }
+
+  .about-special-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .about-special-title {
+    font-size: 17px;
+  }
+
+  .about-award-card {
+    padding: 20px;
+    gap: 14px;
+  }
+
+  .about-award-icon-box {
+    width: 46px;
+    height: 46px;
+  }
+
+  .about-award-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .about-award-title {
+    font-size: 17px;
+  }
+
+  .about-award-org {
+    font-size: 13px;
+  }
+
+  .about-award-year-tag {
+    font-size: 11px;
+    padding: 4px 8px;
   }
 }

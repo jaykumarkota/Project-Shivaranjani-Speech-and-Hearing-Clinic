@@ -5,6 +5,7 @@ import { FaComments } from "react-icons/fa";
 import { MdOutlineCalendarToday } from "react-icons/md";
 import { FaHeadphones } from "react-icons/fa";
 import { RiSpeakFill } from "react-icons/ri";
+import { ourServicesImgs } from "../assets/assets";
 
 
 function Services() {
@@ -106,7 +107,8 @@ function Services() {
 
           <figure className="hs-media" aria-hidden="true">
             <img
-              src="https://northernvirginiafamilymedicine.com/wp-content/uploads/2018/11/PrimaryCareWeb.jpg"
+              // src="https://northernvirginiafamilymedicine.com/wp-content/uploads/2018/11/PrimaryCareWeb.jpg"
+              src={ourServicesImgs.our_services_hearing}
               alt="Audiologist checking hearing aid on patient"
               loading="lazy"
               width="800"
@@ -119,7 +121,8 @@ function Services() {
         <article className="hs-card speech" role="listitem" aria-labelledby="hs-implant-title">
           <figure className="hs-media" aria-hidden="true">
             <img
-              src="https://northernvirginiafamilymedicine.com/wp-content/uploads/2018/11/PrimaryCareWeb.jpg"
+              // src="https://northernvirginiafamilymedicine.com/wp-content/uploads/2018/11/PrimaryCareWeb.jpg"
+              src={ourServicesImgs.our_services_implants}
               alt="Cochlear implant consultation"
               loading="lazy"
               width="800"
@@ -204,7 +207,8 @@ function Services() {
 
           <figure className="hs-media" aria-hidden="true">
             <img
-              src="https://northernvirginiafamilymedicine.com/wp-content/uploads/2018/11/PrimaryCareWeb.jpg"
+              // src="https://northernvirginiafamilymedicine.com/wp-content/uploads/2018/11/PrimaryCareWeb.jpg"
+              src={ourServicesImgs.our_services_speech}
               alt="Speech therapist working with a child"
               loading="lazy"
               width="800"

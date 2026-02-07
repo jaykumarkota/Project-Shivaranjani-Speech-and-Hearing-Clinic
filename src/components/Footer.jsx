@@ -16,7 +16,7 @@ function Footer() {
       label: "Facebook",
     },
     {
-      href: "https://wa.me/1234567890",
+      href: "https://wa.me/918977635998",
       icon: <FaWhatsapp className="wa-icon follow-us-icons" />,
       label: "WhatsApp",
     },

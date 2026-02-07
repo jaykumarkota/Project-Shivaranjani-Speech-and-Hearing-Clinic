@@ -25,6 +25,8 @@
 .our-vision-desc {
   max-width: 75ch;
   font-size: var(--size-base);
+  line-height: 1.7;
+  color: #334155;
 }
 
 .our-vision {
@@ -36,6 +38,8 @@
   text-align: left;
   font-size: var(--size-xl);
   margin: 0.5rem 0 1rem;
+  color: var(--clr-primary);
+  font-weight: 700;
 }
 
 .about-grid-right {
@@ -43,31 +47,216 @@
   width: 25rem; */
   height: 100%;
   width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
-.about-grid-left-img {
+.about-grid-right-img {
   object-fit: cover;
   display: block;
   height: 100%;
   width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(17, 47, 112, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-grid-right-img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(17, 47, 112, 0.15);
 }
 
 
 /* -----------responsiveness----------- */
+
 /* 2xl */
-/* @media (max-width: 1536px) {} */
+@media (max-width: 1536px) {
+  .about-grid {
+    column-gap: 4rem;
+  }
+
+  .about-desc,
+  .our-vision-desc {
+    font-size: 0.98rem;
+  }
+}
 
 /* xl */
-/* @media (max-width: 1280px) {} */
+@media (max-width: 1280px) {
+  .about-grid {
+    column-gap: 3rem;
+  }
+
+  .about-desc,
+  .our-vision-desc {
+    font-size: 0.96rem;
+  }
+}
 
 /* lg */
-/* @media (max-width: 1024px) {} */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+
+  .about-grid-left {
+    padding-right: 0;
+    display: block;
+  }
+
+  .about-grid-right {
+    height: 400px;
+    width: 100%;
+    order: -1;
+    /* Move image to top on smaller screens */
+  }
+
+  .about-grid-right-img {
+    border-radius: 20px;
+    object-position: center 20%;
+  }
+
+  .about-desc,
+  .our-vision-desc {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+}
 
 /* md */
-/* @media (max-width: 768px) {} */
+@media (max-width: 768px) {
+  .about-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .about-title {
+    font-size: var(--size-2xl);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .about-grid {
+    row-gap: 2.5rem;
+  }
+
+  .about-grid-left {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .about-grid-right {
+    height: 400px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .about-grid-right-img {
+    object-position: center center;
+  }
+
+  .about-desc,
+  .our-vision-desc {
+    text-align: center;
+    font-size: 0.93rem;
+    line-height: 1.7;
+  }
+
+  .our-vision-title {
+    text-align: center;
+    font-size: var(--size-lg);
+  }
+}
 
 /* sm */
-/* @media (max-width: 640px) {} */
+@media (max-width: 640px) {
+  .about-section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 1.5rem;
+  }
+
+  .about-title {
+    font-size: var(--size-xl);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-grid {
+    row-gap: 2rem;
+  }
+
+  .about-grid-left {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .about-grid-right {
+    height: 340px;
+    max-width: 360px;
+  }
+
+  .about-desc,
+  .our-vision-desc {
+    font-size: 0.91rem;
+    line-height: 1.75;
+  }
+
+  .our-vision-title {
+    font-size: var(--size-base);
+    margin-top: 1.2rem;
+  }
+}
 
 /* xs */
-/* @media (max-width: 475px) {} */
+@media (max-width: 475px) {
+  .about-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+  }
+
+  .about-title {
+    font-size: var(--size-lg);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .about-grid {
+    row-gap: 1.5rem;
+  }
+
+  .about-grid-left {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+  }
+
+  .about-grid-right {
+    height: 300px;
+    max-width: 280px;
+    border-radius: 12px;
+  }
+
+  .about-grid-right-img {
+    border-radius: 12px;
+  }
+
+  .about-desc,
+  .our-vision-desc {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    text-align: left;
+  }
+
+  .our-vision {
+    margin-top: 1rem;
+  }
+
+  .our-vision-title {
+    font-size: 1rem;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 0.7rem;
+    font-weight: 700;
+  }
+}

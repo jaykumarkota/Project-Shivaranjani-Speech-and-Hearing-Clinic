@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollToTopButton from "../components/ScrollToTopButton";
+import FloatingContactButton from "../components/FloatingContactButton";
 import "../styles/Layouts/MainLayout.css"
 
 function MainLayout() {
@@ -18,6 +19,7 @@ function MainLayout() {
         <Footer />
       </footer>
       <ScrollToTopButton />
+      <FloatingContactButton />
     </div>
   );
 }

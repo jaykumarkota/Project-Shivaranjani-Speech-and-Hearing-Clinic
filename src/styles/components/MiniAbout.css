@@ -54,6 +54,8 @@
   align-items: center;
   justify-content: center;
   column-gap: 0.2rem;
+  width: fit-content !important;
+  flex-shrink: 0;
 }
 
 .read-more-arrow {
@@ -103,6 +105,7 @@
   .read-more {
     font-size: var(--size-sm);
     padding: 0.5rem 0.75rem;
+    width: fit-content;
   }
 
   .read-more-arrow {
@@ -137,6 +140,7 @@
 
   .read-more {
     font-size: var(--size-xs);
+    width: fit-content;
   }
 
   .read-more-arrow {

@@ -13,6 +13,10 @@ import speech_mini_screen from "./speech-mini-screen.png";
 import book_large_screen from "./book-large-screen.png";
 import book_mini_screen from "./book-mini-screen.png";
 
+import our_services_hearing from "../assets/OurServicesImgs/our-services-hearing.jpg";
+import our_services_implants from "../assets/OurServicesImgs/our-services-implants.jpg";
+import our_services_speech from "../assets/OurServicesImgs/our-services-speech.jpg";
+
 export const assets = {
   clinic_logo,
   hearing_services_list,
@@ -42,6 +46,12 @@ export const servicesListImgs = {
   speech_mini_screen,
   book_large_screen,
   book_mini_screen,
+};
+
+export const ourServicesImgs = {
+  our_services_hearing,
+  our_services_implants,
+  our_services_speech,
 };
 
 export const serviceOptions = {
