@@ -1,0 +1,133 @@
+/* Skeleton / Shimmer Loading Placeholder*/
+
+.skeleton {
+    background: #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skeleton::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            transparent 100%);
+    animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* --- Slider skeleton --- */
+.skeleton-slider {
+    aspect-ratio: 16 / 9;
+    max-height: 478px;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+/* --- Gallery skeleton --- */
+.skeleton-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.skeleton-gallery-item {
+    padding-bottom: 75%;
+    /* match gallery 4:3 ratio */
+    border-radius: 16px;
+}
+
+/* --- MiniAbout image skeleton --- */
+.skeleton-about-img {
+    height: 28.125rem;
+    width: 25rem;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+/* --- AboutHero image skeleton --- */
+.skeleton-hero-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+/* ---------- Responsive ---------- */
+
+/* lg */
+@media (max-width: 1024px) {
+    .skeleton-slider {
+        max-height: 360px;
+    }
+
+    .skeleton-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .skeleton-about-img {
+        height: 380px;
+        width: 330px;
+    }
+}
+
+/* md */
+@media (max-width: 768px) {
+    .skeleton-slider {
+        max-height: 280px;
+    }
+
+    .skeleton-gallery-grid {
+        gap: 1rem;
+    }
+
+    .skeleton-gallery-item {
+        padding-bottom: 80%;
+    }
+}
+
+/* sm */
+@media (max-width: 640px) {
+    .skeleton-slider {
+        max-height: 230px;
+        margin-bottom: 1.5rem;
+    }
+
+    .skeleton-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .skeleton-gallery-item {
+        padding-bottom: 70%;
+    }
+
+    .skeleton-about-img {
+        height: 350px;
+        width: 300px;
+    }
+}
+
+/* xs */
+@media (max-width: 475px) {
+    .skeleton-slider {
+        max-height: 200px;
+    }
+
+    .skeleton-gallery-item {
+        padding-bottom: 65%;
+        border-radius: 12px;
+    }
+}

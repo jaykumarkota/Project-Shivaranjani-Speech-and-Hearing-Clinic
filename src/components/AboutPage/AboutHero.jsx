@@ -1,17 +1,43 @@
+import { useState, useEffect } from 'react';
 import '../../styles/components/AboutPage/AboutHero.css';
 import { Link } from 'react-router-dom';
+import { aboutImages } from '../../assets/assets.js';
+import client from '../../sanity/client';
+import { urlFor } from '../../sanity/imageUrl';
+import '../../styles/components/Skeleton.css';
 
 function AboutHero() {
+  const [doctorImg, setDoctorImg] = useState(aboutImages.doctor_img);
+  const [imgLoading, setImgLoading] = useState(true);
+
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "doctor"][0] { profilePic }`)
+      .then((data) => {
+        if (data && data.profilePic) {
+          setDoctorImg(urlFor(data.profilePic).width(800).quality(80).url());
+        }
+        setImgLoading(false);
+      })
+      .catch(() => {
+        // Sanity unavailable — keep fallback image
+        setImgLoading(false);
+      });
+  }, []);
+
   return (
     <section className="hero container section" aria-label="Clinic overview">
       <div className="hero-inner">
 
         <div className="hero-left-img">
-          <img
-            src="https://cdn.pixabay.com/photo/2023/12/21/06/23/doctor-8461303_1280.jpg"
-            alt="Dr. Shivaranjani"
-            className="hero-img"
-          />
+          {imgLoading
+            ? <div className="skeleton skeleton-hero-img"></div>
+            : <img
+              src={doctorImg}
+              alt="Dr. Shivaranjani"
+              className="hero-img"
+            />
+          }
         </div>
 
         <div className="hero-right">
@@ -35,13 +61,9 @@ function AboutHero() {
             </a>
             <Link
               className="btn outline"
-              // href="https://www.linkedin.com/in/godumala-shivaranjani-86435b1a7/"
               to='/about/about-docter'
-            // target="_blank"
-            // rel="noopener noreferrer"
             >
               Read More About Our Docter
-              {/* LinkedIn Profile */}
             </Link>
           </div>
 

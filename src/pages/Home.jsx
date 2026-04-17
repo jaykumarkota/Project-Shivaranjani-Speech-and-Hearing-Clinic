@@ -4,7 +4,7 @@ import Slider from "../components/Slider";
 import ModalWrapper from "../components/ModalWrapper";
 import FormSection from "../components/FormSection";
 import Testimonial from "../components/Testimonial";
-import FAQ from "../components/Faq";
+import FAQ from "../components/FAQ";
 import Location from "../components/Location";
 import Services from "../components/Services";
 import WhyChooseUs from "../components/WhyChooseUs";

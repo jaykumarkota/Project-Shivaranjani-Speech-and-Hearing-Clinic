@@ -2,7 +2,7 @@ import "../styles/pages/HearingServices.css";
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const hearingServiceContents = [
+const hearingServiceContents = [
   {
     title: "Audiological Testing",
     description:
@@ -13,6 +13,7 @@ export const hearingServiceContents = [
       "Audiological testing in Hyderabad to accurately assess hearing levels and detect hearing loss early using advanced equipment.",
     keywords:
       "audiological testing, hearing test, audiometry, hearing evaluation, Hyderabad audiologist",
+    image: "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80",
   },
   {
     title: "Pure Tone Audiometry (PTA)",
@@ -24,6 +25,7 @@ export const hearingServiceContents = [
       "Pure Tone Audiometry (PTA) test in Hyderabad to measure hearing thresholds and identify hearing loss accurately.",
     keywords:
       "pure tone audiometry, PTA test, hearing threshold test, hearing loss detection, Hyderabad clinic",
+    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80",
   },
   {
     title: "Impedance Audiometry & Acoustic Reflex Test",
@@ -35,6 +37,7 @@ export const hearingServiceContents = [
       "Impedance audiometry and acoustic reflex testing in Hyderabad to assess middle ear function and detect ear-related conditions.",
     keywords:
       "impedance audiometry, acoustic reflex test, tympanometry, middle ear test, Hyderabad audiology",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80",
   },
   {
     title: "Tinnitus Assessment & Retraining Therapy (TRT)",
@@ -46,6 +49,7 @@ export const hearingServiceContents = [
       "Tinnitus assessment and retraining therapy in Hyderabad for managing ear ringing and improving sound tolerance.",
     keywords:
       "tinnitus therapy, tinnitus retraining, tinnitus assessment, ringing in ears, Hyderabad clinic",
+    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80",
   },
   {
     title: "Speech Audiometry",
@@ -57,17 +61,19 @@ export const hearingServiceContents = [
       "Speech audiometry in Hyderabad to evaluate speech understanding ability and aid selection of hearing devices.",
     keywords:
       "speech audiometry, SRT test, word recognition, speech understanding test, Hyderabad audiology",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
   },
   {
     title: "Otoacoustic Emissions (OAE)",
     description:
       "Otoacoustic Emissions (OAE) testing evaluates the function of the outer hair cells in the cochlea by detecting echo-like sounds they produce. It is commonly used in newborn hearing screening and for people unable to respond to traditional tests.",
     extra:
-      "This quick, non-invasive test provides valuable insight into cochlear health and helps identify early signs of hearing impairment. It’s essential for infant and special population screenings.",
+      "This quick, non-invasive test provides valuable insight into cochlear health and helps identify early signs of hearing impairment. It's essential for infant and special population screenings.",
     metaDescription:
       "OAE test in Hyderabad for newborn and adult hearing screening to assess cochlear (inner ear) function.",
     keywords:
       "OAE test, otoacoustic emissions, newborn hearing test, cochlear function test, Hyderabad clinic",
+    image: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800&q=80",
   },
   {
     title: "Special Tests (SISI / TDT / ABLB)",
@@ -79,6 +85,7 @@ export const hearingServiceContents = [
       "Specialized hearing tests SISI, TDT, and ABLB in Hyderabad to detect cochlear and nerve-related hearing disorders.",
     keywords:
       "SISI test, TDT test, ABLB test, cochlear test, auditory nerve function, Hyderabad audiology",
+    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=80",
   },
   {
     title: "Aided Audiometry / VROA / BOA",
@@ -90,6 +97,7 @@ export const hearingServiceContents = [
       "Aided audiometry, VROA, and BOA tests in Hyderabad to assess aided hearing response in children and adults.",
     keywords:
       "aided audiometry, VROA, BOA, pediatric hearing test, hearing aid evaluation, Hyderabad audiology",
+    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&q=80",
   },
   {
     title: "Eustachian Tube Function Test",
@@ -101,17 +109,19 @@ export const hearingServiceContents = [
       "Eustachian tube function testing in Hyderabad to evaluate pressure equalization and middle ear health.",
     keywords:
       "eustachian tube test, middle ear pressure, ear blockage, ear popping, Hyderabad clinic",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80",
   },
   {
     title: "BERA / ABR (Brainstem Evoked Response Audiometry)",
     description:
-      "BERA or ABR testing evaluates the auditory nerve’s response to sound signals sent to the brainstem. It is an objective and accurate test used for infants, unconscious patients, or those with neurological concerns.",
+      "BERA or ABR testing evaluates the auditory nerve's response to sound signals sent to the brainstem. It is an objective and accurate test used for infants, unconscious patients, or those with neurological concerns.",
     extra:
       "Small electrodes record electrical responses, revealing how sound travels through the ear and nerve pathways. It is critical for diagnosing neural hearing loss, auditory neuropathy, and confirming hearing thresholds.",
     metaDescription:
       "BERA/ABR test in Hyderabad for evaluating auditory nerve and brainstem responses to sound stimuli.",
     keywords:
       "BERA test, ABR test, auditory brainstem response, hearing nerve test, Hyderabad audiology",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80",
   },
   {
     title: "CAPD (Central Auditory Processing Disorder Assessment)",
@@ -123,6 +133,7 @@ export const hearingServiceContents = [
       "CAPD assessment in Hyderabad to identify auditory processing difficulties and improve listening skills.",
     keywords:
       "CAPD test, auditory processing, listening difficulty, speech-in-noise test, Hyderabad clinic",
+    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80",
   },
   {
     title: "VEMP (Vestibular Evoked Myogenic Potentials)",
@@ -134,28 +145,31 @@ export const hearingServiceContents = [
       "VEMP test in Hyderabad to assess balance-related inner ear function and detect vestibular nerve disorders.",
     keywords:
       "VEMP test, vestibular assessment, balance test, saccule function, Hyderabad clinic",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80",
   },
   {
     title: "EcochG (Electrocochleography)",
     description:
-      "Electrocochleography (EcochG) records electrical potentials from the inner ear and auditory nerve in response to sound. It helps diagnose Meniere’s disease, cochlear hydrops, and auditory neuropathy.",
+      "Electrocochleography (EcochG) records electrical potentials from the inner ear and auditory nerve in response to sound. It helps diagnose Meniere's disease, cochlear hydrops, and auditory neuropathy.",
     extra:
       "Using an electrode near the eardrum or inside the ear canal, this test measures cochlear and neural responses to sound. It provides detailed diagnostic data for inner ear fluid disorders and neural timing issues.",
     metaDescription:
-      "Electrocochleography (EcochG) in Hyderabad for diagnosing Meniere’s disease and inner ear electrical response disorders.",
+      "Electrocochleography (EcochG) in Hyderabad for diagnosing Meniere's disease and inner ear electrical response disorders.",
     keywords:
-      "EcochG test, electrocochleography, Meniere’s diagnosis, cochlear hydrops, Hyderabad audiology",
+      "EcochG test, electrocochleography, Meniere's diagnosis, cochlear hydrops, Hyderabad audiology",
+    image: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=800&q=80",
   },
   {
     title: "Hearing Aid Services",
     description:
-      "Hearing aid services at Shivaranjani Clinic include selection, trial, fitting, and follow-up for digital, rechargeable, and Bluetooth-enabled devices. Our audiologists ensure the right technology matches each person’s hearing loss, lifestyle, and budget.",
+      "Hearing aid services at Shivaranjani Clinic include selection, trial, fitting, and follow-up for digital, rechargeable, and Bluetooth-enabled devices. Our audiologists ensure the right technology matches each person's hearing loss, lifestyle, and budget.",
     extra:
       "Every fitting session includes real-ear measurements, user counselling, and device programming for comfort and clarity. We provide ongoing support for maintenance, battery replacement, and troubleshooting to ensure optimal performance.",
     metaDescription:
       "Hearing aid fitting and trial services in Hyderabad with advanced digital and Bluetooth hearing aids tailored to your needs.",
     keywords:
       "hearing aid services, hearing aid fitting, digital hearing aids, Bluetooth hearing aids, Hyderabad clinic",
+    image: "https://images.unsplash.com/photo-1585435557343-3b092031a831?w=800&q=80",
   },
   {
     title: "Hearing Aid Trial & Fitting",
@@ -167,6 +181,7 @@ export const hearingServiceContents = [
       "Hearing aid trial and fitting in Hyderabad to ensure personalized comfort and improved sound quality for every user.",
     keywords:
       "hearing aid trial, hearing aid fitting, hearing aid adjustment, ear device fitting, Hyderabad audiologist",
+    image: "https://images.unsplash.com/photo-1581595219315-a187dd40c322?w=800&q=80",
   },
   {
     title: "Bluetooth & Rechargeable Hearing Aids",
@@ -178,6 +193,7 @@ export const hearingServiceContents = [
       "Bluetooth and rechargeable hearing aids in Hyderabad offering smart connectivity, comfort, and superior sound quality.",
     keywords:
       "Bluetooth hearing aids, rechargeable hearing aids, smart hearing aids, digital hearing aids, Hyderabad clinic",
+    image: "https://images.unsplash.com/photo-1610438235354-a6ae5528385c?w=800&q=80",
   },
 ];
 
@@ -209,7 +225,7 @@ function HearingServices() {
                 aria-label={`${service.title} illustration`}
               >
                 <img
-                  src="https://bridgesspeechcenter.ae/wp-content/uploads/2023/10/speech-therapy-2048x1367.jpg"
+                  src={service.image}
                   alt={`${service.title} - visual representation`}
                   className="service-image"
                 />

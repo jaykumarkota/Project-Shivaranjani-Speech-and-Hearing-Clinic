@@ -25,8 +25,8 @@ const Contact = () => {
             id: 3,
             icon: <FaMapMarkerAlt />,
             title: 'Location',
-            details: ['123 Health Street, Medical Plaza', 'Hyderabad, Telangana - 500001'],
-            link: 'https://maps.google.com',
+            details: ['Shivaranjani Speech and Hearing Clinic', 'Hyderabad, Telangana'],
+            link: 'https://www.google.com/maps/place/Shivaranjani+Speech+and+Hearing+Clinic/@17.4020941,78.5821943,17z',
             color: '#ef4444'
         },
         {
@@ -144,14 +144,14 @@ const Contact = () => {
                         <h3 className="map-title">Visit Our Clinic</h3>
                         <div className="map-wrapper">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6317468658287!2d78.4867!3d17.4239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI1JzI2LjAiTiA3OMKwMjknMTIuMSJF!5e0!3m2!1sen!2sin!4v1234567890"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d951.8004837419511!2d78.5821943!3d17.4020941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9f00690e2a7d%3A0x513fdf3170598b4b!2sShivaranjani%20Speech%20and%20Hearing%20Clinic!5e0!3m2!1sen!2sin!4v1768296553474!5m2!1sen!2sin"
                                 width="100%"
                                 height="400"
                                 style={{ border: 0, borderRadius: '12px' }}
                                 allowFullScreen=""
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                                title="Clinic Location"
+                                title="Shivaranjani Speech & Hearing Clinic Location"
                             ></iframe>
                         </div>
                     </div>

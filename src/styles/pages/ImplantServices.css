@@ -1,0 +1,420 @@
+.implant-services {
+    padding: 3.75rem 1.25rem;
+    color: var(--clr-primary);
+    text-align: center;
+}
+
+.implant-services-title {
+    font-size: var(--size-4xl);
+    color: var(--clr-primary);
+}
+
+.implant-services-subtitle {
+    max-width: 60ch;
+    margin: 1rem auto 2rem;
+    font-size: var(--size-base);
+    color: var(--clr-primary);
+}
+
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        'img-cont-1 service-cont-1'
+        'img-cont-2 service-cont-2'
+        'img-cont-3 service-cont-3'
+        'img-cont-4 service-cont-4'
+        'img-cont-5 service-cont-5'
+        'img-cont-6 service-cont-6'
+        'img-cont-7 service-cont-7'
+        'img-cont-8 service-cont-8'
+        'img-cont-9 service-cont-9'
+        'img-cont-10 service-cont-10'
+    ;
+    grid-auto-rows: auto;
+    column-gap: 0;
+    row-gap: 2.5rem;
+    padding: 1.25rem;
+    margin: 0 auto;
+    align-items: stretch;
+    max-width: 1400px;
+}
+
+.img-cont-1 {
+    grid-area: img-cont-1;
+}
+
+.img-cont-2 {
+    grid-area: img-cont-2;
+}
+
+.img-cont-3 {
+    grid-area: img-cont-3;
+}
+
+.img-cont-4 {
+    grid-area: img-cont-4;
+}
+
+.img-cont-5 {
+    grid-area: img-cont-5;
+}
+
+.img-cont-6 {
+    grid-area: img-cont-6;
+}
+
+.img-cont-7 {
+    grid-area: img-cont-7;
+}
+
+.img-cont-8 {
+    grid-area: img-cont-8;
+}
+
+.img-cont-9 {
+    grid-area: img-cont-9;
+}
+
+.img-cont-10 {
+    grid-area: img-cont-10;
+}
+
+
+.service-cont-1 {
+    grid-area: service-cont-1;
+}
+
+.service-cont-2 {
+    grid-area: service-cont-2;
+}
+
+.service-cont-3 {
+    grid-area: service-cont-3;
+}
+
+.service-cont-4 {
+    grid-area: service-cont-4;
+}
+
+.service-cont-5 {
+    grid-area: service-cont-5;
+}
+
+.service-cont-6 {
+    grid-area: service-cont-6;
+}
+
+.service-cont-7 {
+    grid-area: service-cont-7;
+}
+
+.service-cont-8 {
+    grid-area: service-cont-8;
+}
+
+.service-cont-9 {
+    grid-area: service-cont-9;
+}
+
+.service-cont-10 {
+    grid-area: service-cont-10;
+}
+
+
+.implant-services .service-card {
+    text-align: center;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px 0 0 16px;
+    box-shadow: 0 4px 12px rgba(11, 35, 68, 0.08);
+    transition: all 0.4s ease;
+    min-height: 0;
+}
+
+.implant-services .service-card img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.implant-services .service-card::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, var(--clr-primary) 0%, rgba(11, 35, 68, 0.6) 100%);
+    opacity: 0.15;
+    transition: opacity 0.4s ease;
+}
+
+.implant-services .service-card:hover {
+    box-shadow: 0 8px 24px rgba(11, 35, 68, 0.15);
+}
+
+.implant-services .service-card:hover>img {
+    transform: scale(1.08);
+}
+
+.implant-services .service-card:hover::after {
+    opacity: 0.05;
+}
+
+.implant-services .service-content {
+    margin: auto 0;
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    color: #222;
+    text-align: left;
+    border-radius: 0 16px 16px 0;
+    box-shadow: 0 4px 12px rgba(11, 35, 68, 0.08);
+    border: 1px solid rgba(11, 35, 68, 0.06);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.implant-services .service-content:hover {
+    box-shadow: 0 8px 24px rgba(11, 35, 68, 0.12);
+    transform: translateY(-2px);
+    border-color: rgba(11, 35, 68, 0.1);
+}
+
+.implant-services .service-title-large {
+    font-size: var(--size-2xl);
+    margin: 0 0 1rem 0;
+    color: var(--clr-primary);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.implant-services .service-title-small {
+    font-size: var(--size-2xl);
+    margin: 1rem 0;
+    color: var(--clr-primary);
+    display: none;
+}
+
+.implant-services .service-description {
+    font-size: var(--size-sm);
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+.implant-services .service-desc1 {
+    margin-bottom: 1rem;
+    color: #2d3748;
+}
+
+.implant-services .service-desc2 {
+    margin-bottom: 2rem;
+    color: #4a5568;
+}
+
+.implant-services .service-book-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--clr-btn);
+    color: #fff;
+    padding: 0.75rem 1.75rem;
+    border-radius: 30px;
+    font-size: var(--size-sm);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(11, 35, 68, 0.15);
+    border: none;
+    align-self: flex-start;
+}
+
+.implant-services .service-book-btn:hover {
+    background: #0b2344;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(11, 35, 68, 0.25);
+}
+
+
+
+
+/* -----------media section----------- */
+/* 2xl */
+/* @media (max-width: 1536px) {} */
+
+/* xl */
+/* @media (max-width: 1280px) {} */
+
+/* lg */
+@media (max-width: 1024px) {
+    .implant-services {
+        padding: 2.5rem 0.93rem;
+    }
+
+    .implant-services-title {
+        font-size: var(--size-3xl);
+    }
+
+    .implant-services-subtitle {
+        margin: 1.5rem auto;
+        font-size: var(--size-sm);
+    }
+
+    .implant-services .services-grid {
+        row-gap: 2rem;
+    }
+
+    .implant-services .service-content {
+        padding: 2.5rem 2rem;
+    }
+
+    .implant-services .service-description {
+        font-size: var(--size-sm);
+    }
+}
+
+/* md */
+@media (max-width: 768px) {
+
+    .implant-services .services-grid {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: none;
+        grid-template-areas: none;
+        padding: 1.25rem 0;
+        width: 100%;
+        gap: 0;
+    }
+
+    .implant-services .service-card {
+        border-radius: 16px 16px 0 0;
+        min-height: 240px;
+        max-height: 300px;
+        box-shadow: none;
+        margin-bottom: 0;
+    }
+
+    .implant-services .service-content {
+        border-radius: 0 0 16px 16px;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        box-shadow: 0 6px 24px rgba(11, 35, 68, 0.12);
+        margin-top: 0;
+    }
+
+    .implant-services .service-content:hover {
+        box-shadow: 0 8px 28px rgba(11, 35, 68, 0.15);
+        transform: none;
+    }
+
+
+
+    .implant-services .service-title-large {
+        display: none;
+    }
+
+    .implant-services .service-title-small {
+        display: block;
+        font-size: var(--size-xl);
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .implant-services .service-book-btn {
+        align-self: center;
+        padding: 0.65rem 1.5rem;
+    }
+}
+
+/* sm */
+@media (max-width: 640px) {
+
+    .implant-services-title {
+        font-size: var(--size-2xl);
+    }
+
+    .implant-services-subtitle {
+        margin: 1rem auto;
+        font-size: var(--size-sm);
+    }
+
+    .implant-services {
+        padding: 2rem 1rem;
+    }
+
+    .implant-services .services-grid {
+        padding: 1rem 0;
+        gap: 0;
+    }
+
+    .implant-services .service-card {
+        min-height: 200px;
+        max-height: 260px;
+    }
+
+    .implant-services .service-content {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .implant-services .service-title-small {
+        font-size: var(--size-lg);
+    }
+
+    .implant-services .service-description {
+        font-size: var(--size-xs);
+    }
+
+    .implant-services .service-book-btn {
+        font-size: var(--size-xs);
+        padding: 0.6rem 1.25rem;
+    }
+
+    .implant-services .service-desc2 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* xs */
+@media (max-width: 475px) {
+
+    .implant-services-title {
+        font-size: var(--size-xl);
+    }
+
+    .implant-services-subtitle {
+        margin: 0.75rem auto;
+        font-size: var(--size-xs);
+    }
+
+    .implant-services .services-grid {
+        gap: 0;
+    }
+
+    .implant-services .service-card {
+        min-height: 180px;
+        max-height: 220px;
+    }
+
+    .implant-services .service-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .implant-services .service-title-small {
+        font-size: var(--size-base);
+        margin-bottom: 1rem;
+    }
+
+    .implant-services .service-book-btn {
+        padding: 0.55rem 1rem;
+    }
+}

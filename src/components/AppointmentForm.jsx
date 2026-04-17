@@ -8,16 +8,14 @@ import {
   FaClock,
 } from "react-icons/fa6";
 import { FaUserDoctor } from "react-icons/fa6";
-import { FaClipboardList, FaTools } from "react-icons/fa";
+import { FaClipboardList } from "react-icons/fa";
 import { FaStickyNote } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { GiAges } from "react-icons/gi";
 import "../styles/components/AppointmentForm.css";
 
-
 function AppointmentForm() {
-
   const location = useLocation();
   const initialServiceType = location.state?.serviceType || "";
   const initialService = location.state?.service || "";
@@ -38,19 +36,22 @@ function AppointmentForm() {
   const [status, setStatus] = useState("");
   const [errors, setErrors] = useState({});
 
-  // Date setup
   const today = new Date().toISOString().split("T")[0];
   const maxDate = new Date();
   maxDate.setDate(maxDate.getDate() + 30);
   const max = maxDate.toISOString().split("T")[0];
 
-  // Generate time slots from 10:00 AM to 8:00 PM in 30-minute intervals
   const generateTimeSlots = () => {
     const slots = [];
     for (let hour = 10; hour <= 20; hour++) {
       for (let minute = 0; minute < 60; minute += 30) {
-        if (hour === 20 && minute > 0) break; // Stop at 20:00
-        const timeString = `${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}`;
+        if (hour === 20 && minute > 0) {
+          break;
+        }
+
+        const timeString = `${hour.toString().padStart(2, "0")}:${minute
+          .toString()
+          .padStart(2, "0")}`;
         slots.push(timeString);
       }
     }
@@ -59,8 +60,6 @@ function AppointmentForm() {
 
   const timeSlots = generateTimeSlots();
 
-
-  // Validation functions
   const validateField = (name, value) => {
     let error = "";
 
@@ -89,14 +88,15 @@ function AppointmentForm() {
         }
         break;
 
-      case "age":
-        const ageNum = parseInt(value);
+      case "age": {
+        const ageNum = parseInt(value, 10);
         if (!value) {
           error = "Age is required";
-        } else if (isNaN(ageNum) || ageNum < 1 || ageNum > 100) {
+        } else if (Number.isNaN(ageNum) || ageNum < 1 || ageNum > 100) {
           error = "Age must be between 1 and 100";
         }
         break;
+      }
 
       case "gender":
         if (!value) {
@@ -111,7 +111,7 @@ function AppointmentForm() {
         break;
 
       case "service":
-        if (!value) {
+        if (!value && formData.serviceType !== "video_consultancy") {
           error = "Please select a service";
         }
         break;
@@ -143,38 +143,33 @@ function AppointmentForm() {
     return error;
   };
 
-  // Handle field change
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value)
 
-    // Clear subservice when main type changes
     if (name === "serviceType") {
       setFormData((prev) => ({ ...prev, serviceType: value, service: "" }));
       setErrors((prev) => ({ ...prev, serviceType: "", service: "" }));
-    } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
-
-      // Validate field on change
-      const error = validateField(name, value);
-      setErrors((prev) => ({ ...prev, [name]: error }));
+      return;
     }
+
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    const error = validateField(name, value);
+    setErrors((prev) => ({ ...prev, [name]: error }));
   };
 
-  // Validate all fields
   const validateForm = () => {
     const newErrors = {};
     let isValid = true;
 
     Object.keys(formData).forEach((key) => {
-      if (key !== "message") { // message is optional
+      if (key !== "message") {
         const error = validateField(key, formData[key]);
         if (error) {
           newErrors[key] = error;
           isValid = false;
         }
       } else if (formData[key]) {
-        // Validate message only if it's provided
         const error = validateField(key, formData[key]);
         if (error) {
           newErrors[key] = error;
@@ -187,16 +182,12 @@ function AppointmentForm() {
     return isValid;
   };
 
-  // Submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Clear previous status
     setStatus("");
 
-    // Validate form
     if (!validateForm()) {
-      setStatus("❌ Please fix the errors before submitting");
+      setStatus("Please fix the errors before submitting.");
       return;
     }
 
@@ -208,7 +199,7 @@ function AppointmentForm() {
         throw new Error("Google Sheets URL not configured");
       }
 
-      const response = await fetch(webAppURL, {
+      await fetch(webAppURL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -217,9 +208,7 @@ function AppointmentForm() {
         mode: "no-cors",
       });
 
-      // Since we're using no-cors, we can't read the response
-      // Assume success if no error is thrown
-      setStatus("✅ Submitted successfully!");
+      setStatus("Submitted successfully.");
       setFormData({
         name: "",
         number: "",
@@ -234,25 +223,24 @@ function AppointmentForm() {
       });
       setErrors({});
 
-      // Clear success message after 5 seconds
       setTimeout(() => setStatus(""), 5000);
     } catch (error) {
       console.error("Form submission error:", error);
-      setStatus("❌ Submission failed. Please try again.");
+      setStatus("Submission failed. Please try again.");
     }
   };
 
-  // Dynamically load subservice options
   const currentSubOptions =
     formData.serviceType === "hearing"
       ? serviceOptions.hearing
       : formData.serviceType === "speech"
         ? serviceOptions.speech
-        : [];
+        : formData.serviceType === "implant"
+          ? serviceOptions.implant
+          : [];
 
   return (
     <form className="appointment-form" onSubmit={handleSubmit} noValidate>
-      {/* Name */}
       <div className="input-box name-box">
         <FaUserLarge className="input-icon" />
         <input
@@ -267,7 +255,6 @@ function AppointmentForm() {
         {errors.name && <span className="error-message">{errors.name}</span>}
       </div>
 
-      {/* Phone */}
       <div className="input-box tel-box">
         <BsFillTelephoneFill className="input-icon" />
         <input
@@ -282,7 +269,6 @@ function AppointmentForm() {
         {errors.number && <span className="error-message">{errors.number}</span>}
       </div>
 
-      {/* Email */}
       <div className="input-box email-box">
         <div className="input-wrapper">
           <MdEmail className="input-icon" />
@@ -295,12 +281,10 @@ function AppointmentForm() {
             aria-label="email"
             className={errors.email ? "input-error" : ""}
           />
-
         </div>
         {errors.email && <span className="error-message">{errors.email}</span>}
       </div>
 
-      {/* Age */}
       <div className="input-box age-box">
         <GiAges className="input-icon" />
         <input
@@ -317,7 +301,6 @@ function AppointmentForm() {
         {errors.age && <span className="error-message">{errors.age}</span>}
       </div>
 
-      {/* Gender */}
       <div className="input-box gender-box">
         <FaVenusMars className="input-icon" />
         <select
@@ -335,7 +318,6 @@ function AppointmentForm() {
         {errors.gender && <span className="error-message">{errors.gender}</span>}
       </div>
 
-      {/* Service Type */}
       <div className="input-box service-type-box">
         <FaUserDoctor className="input-icon" />
         <select
@@ -348,11 +330,14 @@ function AppointmentForm() {
           <option value="">Select Service Type</option>
           <option value="hearing">Hearing Service</option>
           <option value="speech">Speech Service</option>
+          <option value="implant">Implant Service</option>
+          <option value="video_consultancy">Video Consultancy</option>
         </select>
-        {errors.serviceType && <span className="error-message">{errors.serviceType}</span>}
+        {errors.serviceType && (
+          <span className="error-message">{errors.serviceType}</span>
+        )}
       </div>
 
-      {/* Sub Service */}
       <div className="input-box service-sub-box">
         <FaClipboardList className="input-icon" />
         <select
@@ -360,11 +345,11 @@ function AppointmentForm() {
           value={formData.service}
           onChange={handleChange}
           aria-label="service"
-          disabled={!formData.serviceType}
+          disabled={!formData.serviceType || formData.serviceType === "video_consultancy"}
           className={errors.service ? "input-error" : ""}
         >
           <option value="">
-            {formData.serviceType
+            {formData.serviceType && formData.serviceType !== "video_consultancy"
               ? "Select Service"
               : "Select Service Type first"}
           </option>
@@ -377,7 +362,6 @@ function AppointmentForm() {
         {errors.service && <span className="error-message">{errors.service}</span>}
       </div>
 
-      {/* Date */}
       <div className="input-box date-box">
         <FaCalendarDays className="input-icon" />
         <input
@@ -393,7 +377,6 @@ function AppointmentForm() {
         {errors.date && <span className="error-message">{errors.date}</span>}
       </div>
 
-      {/* Time - Changed to Select */}
       <div className="input-box time-box">
         <FaClock className="input-icon" />
         <select
@@ -413,7 +396,6 @@ function AppointmentForm() {
         {errors.time && <span className="error-message">{errors.time}</span>}
       </div>
 
-      {/* Message */}
       <div className="input-box msg-box">
         <FaStickyNote className="input-icon msg-icon" />
         <textarea
@@ -428,7 +410,6 @@ function AppointmentForm() {
         {errors.message && <span className="error-message">{errors.message}</span>}
       </div>
 
-      {/* Submit */}
       <div className="submit-box">
         <button
           type="submit"

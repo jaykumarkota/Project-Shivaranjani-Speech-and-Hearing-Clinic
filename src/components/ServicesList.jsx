@@ -1,6 +1,7 @@
 import "../styles/components/ServicesList.css";
 import { servicesListImgs } from "../assets/assets";
 import { Link } from "react-router-dom";
+
 function ServicesList() {
   return (
     <section className="services-list container">

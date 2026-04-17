@@ -69,7 +69,7 @@ function Services() {
         <article className="hs-card hearing" role="listitem" aria-labelledby="hs-hearing-title">
           <div className="hs-card-content">
             <div className="hs-icon" aria-hidden="true"><FaEarListen /></div>
-            <h3 id="hs-hearing-title">Hearing Care</h3>
+            <h3 id="hs-hearing-title">Hearing Services</h3>
             <p className="hs-lead">
               Comprehensive audiology services including testing, hearing device
               fitting and tinnitus support.
@@ -107,7 +107,6 @@ function Services() {
 
           <figure className="hs-media" aria-hidden="true">
             <img
-              // src="https://northernvirginiafamilymedicine.com/wp-content/uploads/2018/11/PrimaryCareWeb.jpg"
               src={ourServicesImgs.our_services_hearing}
               alt="Audiologist checking hearing aid on patient"
               loading="lazy"
@@ -121,7 +120,6 @@ function Services() {
         <article className="hs-card speech" role="listitem" aria-labelledby="hs-implant-title">
           <figure className="hs-media" aria-hidden="true">
             <img
-              // src="https://northernvirginiafamilymedicine.com/wp-content/uploads/2018/11/PrimaryCareWeb.jpg"
               src={ourServicesImgs.our_services_implants}
               alt="Cochlear implant consultation"
               loading="lazy"
@@ -156,9 +154,9 @@ function Services() {
               </Link>
 
               <Link
-                to="/services/hearing"
+                to="/services/implants"
                 className="btn hs-btn ghost"
-                data-ga="learn-hearing"
+                data-ga="learn-implant"
                 aria-label="Learn more about implant services"
               >
                 Learn more
@@ -207,7 +205,6 @@ function Services() {
 
           <figure className="hs-media" aria-hidden="true">
             <img
-              // src="https://northernvirginiafamilymedicine.com/wp-content/uploads/2018/11/PrimaryCareWeb.jpg"
               src={ourServicesImgs.our_services_speech}
               alt="Speech therapist working with a child"
               loading="lazy"

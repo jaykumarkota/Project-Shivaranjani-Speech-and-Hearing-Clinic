@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import AppointmentForm from "./AppointmentForm";
-import '../styles/components/ModalWrapper.css'
+import "../styles/components/ModalWrapper.css";
 
 function ModalWrapper() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,13 +12,23 @@ function ModalWrapper() {
 
   const closeModal = () => setIsOpen(false);
 
-  if (!isOpen) return null;
+  if (!isOpen) {
+    return null;
+  }
 
   return (
     <div className="modal-overlay">
       <div className="modal-content ">
-        <h2 className="form-title-popup">Get a quick consultation by filling the form</h2>
-        <button className="modal-close" onClick={closeModal}>✖</button>
+        <h2 className="form-title-popup">
+          Get a quick consultation by filling the form
+        </h2>
+        <button
+          className="modal-close"
+          onClick={closeModal}
+          aria-label="Close consultation form"
+        >
+          X
+        </button>
         <AppointmentForm />
       </div>
     </div>

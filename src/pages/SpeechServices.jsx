@@ -171,18 +171,8 @@ import { Link } from "react-router-dom";
 //   //     "Our compassionate approach helps patients regain independence and confidence."
 //   // }
 // ];
-export const speechServiceContents = [
-  // {
-  //   title: "Speech Services",
-  //   description:
-  //     "At Shivaranjani Speech & Hearing Clinic we offer a full range of speech and hearing services for children and adults, delivered by licensed speech-language pathologists and allied therapists. Care begins with a focused intake and screening, followed by standardised assessments when needed, so we can build a therapy plan based on measurable goals.",
-  //   extra:
-  //     "Treatment is goal-directed and may include direct therapy, family training, home practice programmes and periodic progress reviews. Most plans are collaborative — we work with families, teachers, audiologists and medical teams to support real-life communication in school, work and home settings. Our approach emphasises functional outcomes: clearer speech, stronger language skills, and improved confidence.",
-  //   metaDescription:
-  //     "Comprehensive speech and hearing services in Hyderabad for children and adults, including evaluations, therapy, and personalised communication programs.",
-  //   keywords:
-  //     "speech services, hearing services, speech therapy, language assessment, Hyderabad clinic, communication improvement",
-  // },
+const speechServiceContents = [
+
   {
     title: "Speech Evaluation",
     description:
@@ -193,6 +183,7 @@ export const speechServiceContents = [
       "Professional speech evaluation in Hyderabad to identify communication difficulties and design tailored therapy plans for children and adults.",
     keywords:
       "speech evaluation, language assessment, speech screening, Hyderabad clinic, communication diagnosis",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
   },
   {
     title: "Auditory Verbal Therapy (CI / ABT)",
@@ -204,17 +195,19 @@ export const speechServiceContents = [
       "Auditory Verbal Therapy (AVT) for cochlear implant and hearing aid users in Hyderabad, focusing on improving listening and spoken language skills.",
     keywords:
       "auditory verbal therapy, AVT, cochlear implant therapy, hearing aid therapy, language development",
+    image: "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80",
   },
   {
     title: "ABA & CBT",
     description:
       "Applied Behavior Analysis (ABA) and Cognitive Behavioural Therapy (CBT) are evidence-based practices that address behavior, learning and emotional health from complementary angles. ABA is highly structured and data-driven: clinicians conduct a behavioural assessment, set very specific skill and behaviour goals, use repeated teaching and positive reinforcement, and continuously measure outcomes to shape learning (common in autism support).",
     extra:
-      "CBT is a short-term talking therapy used to identify and change unhelpful thoughts and behaviour patterns; it’s especially effective for anxiety, low mood and behaviour that interferes with learning or social participation. In our centre, ABA focuses on skill acquisition and behaviour support plans while CBT helps older children and adults develop coping skills, emotional regulation, and problem solving — both delivered by trained specialists and coordinated with families and schools.",
+      "CBT is a short-term talking therapy used to identify and change unhelpful thoughts and behaviour patterns; it's especially effective for anxiety, low mood and behaviour that interferes with learning or social participation. In our centre, ABA focuses on skill acquisition and behaviour support plans while CBT helps older children and adults develop coping skills, emotional regulation, and problem solving — both delivered by trained specialists and coordinated with families and schools.",
     metaDescription:
       "ABA and CBT therapy services in Hyderabad for children and adults, focusing on behavioural management, emotional regulation, and skill development.",
     keywords:
       "ABA therapy, CBT therapy, behaviour therapy, emotional regulation, autism support, Hyderabad clinic",
+    image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=800&q=80",
   },
   {
     title: "Speech Therapy",
@@ -226,6 +219,7 @@ export const speechServiceContents = [
       "Expert speech therapy in Hyderabad to improve pronunciation, fluency, and communication clarity for children and adults.",
     keywords:
       "speech therapy, pronunciation improvement, fluency therapy, Hyderabad clinic, language therapy",
+    image: "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=800&q=80",
   },
   {
     title: "Behavioural Therapy",
@@ -237,6 +231,7 @@ export const speechServiceContents = [
       "Professional behavioural therapy services in Hyderabad for children and adults to manage emotions, improve focus, and develop positive behaviors.",
     keywords:
       "behavioural therapy, behaviour management, emotional regulation, Hyderabad clinic, coping skills",
+    image: "https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=80",
   },
   {
     title: "Occupational Therapy",
@@ -248,6 +243,7 @@ export const speechServiceContents = [
       "Occupational therapy in Hyderabad for children and adults to improve motor skills, daily living independence, and functional abilities.",
     keywords:
       "occupational therapy, OT services, daily living skills, motor skill development, Hyderabad clinic",
+    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&q=80",
   },
   {
     title: "Swallowing Therapy",
@@ -259,6 +255,7 @@ export const speechServiceContents = [
       "Swallowing therapy (dysphagia management) in Hyderabad for safe eating and drinking, improving oral and pharyngeal muscle function.",
     keywords:
       "swallowing therapy, dysphagia treatment, swallowing exercises, Hyderabad clinic, safe eating therapy",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80",
   },
   {
     title: "Stuttering Therapy",
@@ -270,6 +267,7 @@ export const speechServiceContents = [
       "Stuttering therapy in Hyderabad for children and adults to improve fluency, confidence, and communication skills.",
     keywords:
       "stuttering therapy, fluency therapy, speech improvement, Hyderabad clinic, communication skills",
+    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80",
   },
   {
     title: "Voice Therapy",
@@ -281,6 +279,7 @@ export const speechServiceContents = [
       "Voice therapy in Hyderabad for individuals with hoarseness, vocal strain or weakness to restore healthy voice and communication.",
     keywords:
       "voice therapy, vocal rehabilitation, voice exercises, Hyderabad clinic, speech clarity",
+    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80",
   },
   {
     title: "Special Education",
@@ -292,17 +291,19 @@ export const speechServiceContents = [
       "Special education services in Hyderabad with individualized learning plans, academic support, and tailored teaching for children with developmental differences.",
     keywords:
       "special education, individualized learning, IEP, Hyderabad clinic, academic support",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
   },
   {
     title: "Pre-Employment Assessment",
     description:
-      "Pre-employment assessment evaluates communication, cognitive and behavioural skills relevant to a specific job — it’s a practical, occupationally focused assessment to identify strengths, limitations and reasonable accommodations. Components may include communication tasks, cognitive screening, vocational interest inventories, work-sample tasks and interview simulations.",
+      "Pre-employment assessment evaluates communication, cognitive and behavioural skills relevant to a specific job — it's a practical, occupationally focused assessment to identify strengths, limitations and reasonable accommodations. Components may include communication tasks, cognitive screening, vocational interest inventories, work-sample tasks and interview simulations.",
     extra:
       "Results produce a clear report with recommended supports, training needs and workplace adaptations. For people returning after illness or with developmental differences we align assessments to realistic job demands and provide job coaching plans so the candidate is prepared and confident. Results help employers and candidates match the right role and plan successful workplace integration.",
     metaDescription:
       "Pre-employment assessment in Hyderabad to evaluate communication, cognitive, and behavioral skills for successful workplace placement.",
     keywords:
       "pre-employment assessment, job readiness, workplace skills, Hyderabad clinic, cognitive assessment",
+    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80",
   },
   {
     title: "Pre & Post Implant Counselling",
@@ -314,6 +315,7 @@ export const speechServiceContents = [
       "Pre and post cochlear implant counselling in Hyderabad to guide families and support hearing rehabilitation effectively.",
     keywords:
       "cochlear implant counselling, pre implant counselling, post implant support, hearing rehabilitation, Hyderabad clinic",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80",
   },
   {
     title: "Post-Stroke Management & Counselling",
@@ -325,6 +327,7 @@ export const speechServiceContents = [
       "Post-stroke management and counselling in Hyderabad to support recovery of speech, swallowing, cognition, and emotional wellbeing.",
     keywords:
       "post-stroke therapy, stroke rehabilitation, speech recovery, occupational therapy, Hyderabad clinic",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
   },
 ];
 
@@ -355,7 +358,7 @@ function SpeechServices() {
                 aria-label={`${service.title} illustration`}
               >
                 <img
-                  src="https://bridgesspeechcenter.ae/wp-content/uploads/2023/10/speech-therapy-2048x1367.jpg"
+                  src={service.image}
                   alt={`${service.title} - visual representation`}
                   className="service-image"
                 />
