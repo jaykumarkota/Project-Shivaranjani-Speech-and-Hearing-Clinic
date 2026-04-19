@@ -15,6 +15,26 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { GiAges } from "react-icons/gi";
 import "../styles/components/AppointmentForm.css";
 
+function getServiceOptions(serviceType, selectedService) {
+  const baseOptions =
+    serviceType === "hearing"
+      ? serviceOptions.hearing
+      : serviceType === "speech"
+        ? serviceOptions.speech
+        : serviceType === "implant"
+          ? serviceOptions.implant
+          : [];
+
+  if (!selectedService || baseOptions.some((option) => option.value === selectedService)) {
+    return baseOptions;
+  }
+
+  return [
+    { value: selectedService, label: selectedService },
+    ...baseOptions,
+  ];
+}
+
 function AppointmentForm() {
   const location = useLocation();
   const initialServiceType = location.state?.serviceType || "";
@@ -59,6 +79,7 @@ function AppointmentForm() {
   };
 
   const timeSlots = generateTimeSlots();
+  const currentSubOptions = getServiceOptions(formData.serviceType, formData.service);
 
   const validateField = (name, value) => {
     let error = "";
@@ -194,21 +215,29 @@ function AppointmentForm() {
     setStatus("Submitting...");
 
     try {
-      const webAppURL = import.meta.env.VITE_GOOGLE_SHEETS_URL;
-      if (!webAppURL) {
-        throw new Error("Google Sheets URL not configured");
-      }
+      const payload = {
+        ...formData,
+        service:
+          formData.serviceType === "video_consultancy"
+            ? formData.service || "Video Consultancy"
+            : formData.service,
+      };
 
-      await fetch(webAppURL, {
+      const response = await fetch("/api/appointments", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
-        mode: "no-cors",
+        body: JSON.stringify(payload),
       });
 
-      setStatus("Submitted successfully.");
+      const result = await response.json();
+
+      if (!response.ok || result.status !== "success") {
+        throw new Error(result.message || "Appointment submission failed");
+      }
+
+      setStatus("Appointment request submitted successfully.");
       setFormData({
         name: "",
         number: "",
@@ -226,18 +255,13 @@ function AppointmentForm() {
       setTimeout(() => setStatus(""), 5000);
     } catch (error) {
       console.error("Form submission error:", error);
-      setStatus("Submission failed. Please try again.");
+      setStatus(
+        error instanceof Error
+          ? error.message
+          : "Submission failed. Please check the booking setup and try again."
+      );
     }
   };
-
-  const currentSubOptions =
-    formData.serviceType === "hearing"
-      ? serviceOptions.hearing
-      : formData.serviceType === "speech"
-        ? serviceOptions.speech
-        : formData.serviceType === "implant"
-          ? serviceOptions.implant
-          : [];
 
   return (
     <form className="appointment-form" onSubmit={handleSubmit} noValidate>
