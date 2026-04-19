@@ -231,10 +231,22 @@ function AppointmentForm() {
         body: JSON.stringify(payload),
       });
 
-      const result = await response.json();
+      const responseText = await response.text();
+      let result = null;
 
-      if (!response.ok || result.status !== "success") {
-        throw new Error(result.message || "Appointment submission failed");
+      try {
+        result = responseText ? JSON.parse(responseText) : null;
+      } catch {
+        result = {
+          status: "error",
+          message: responseText || "Unexpected response from the booking server.",
+        };
+      }
+
+      if (!response.ok || !result || result.status !== "success") {
+        throw new Error(
+          result?.message || "Appointment submission failed. Please try again."
+        );
       }
 
       setStatus("Appointment request submitted successfully.");

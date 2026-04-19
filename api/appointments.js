@@ -70,7 +70,8 @@ export default async function handler(req, res) {
     if (!upstreamResponse.ok || responseData.status === "error") {
       return res.status(502).json({
         status: "error",
-        message: responseData.message || "Google Sheets rejected the submission",
+        message:
+          responseData.message || "Google Sheets rejected the submission",
         details: responseData,
       });
     }
