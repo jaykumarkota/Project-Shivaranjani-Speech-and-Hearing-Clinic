@@ -16,15 +16,6 @@ function normalizePayload(body) {
   return body;
 }
 
-function toFormBody(payload) {
-  const params = new URLSearchParams();
-
-  Object.entries(payload).forEach(([key, value]) => {
-    params.append(key, value == null ? "" : String(value));
-  });
-
-  return params.toString();
-}
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -50,13 +41,12 @@ export default async function handler(req, res) {
     const upstreamResponse = await fetch(webAppURL, {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        "Content-Type": "application/json",
       },
-      body: toFormBody(payload),
+      body: JSON.stringify(payload),
     });
 
     const responseText = await upstreamResponse.text();
-    const contentType = upstreamResponse.headers.get("content-type") || "";
 
     let responseData;
     try {
@@ -68,7 +58,6 @@ export default async function handler(req, res) {
           "Google Sheets did not return a valid JSON response. Check the Apps Script deployment access and URL.",
         details: {
           statusCode: upstreamResponse.status,
-          contentType,
           preview: responseText.slice(0, 300),
         },
       });
@@ -76,7 +65,6 @@ export default async function handler(req, res) {
 
     if (
       !upstreamResponse.ok ||
-      !contentType.includes("application/json") ||
       !responseData ||
       typeof responseData !== "object" ||
       responseData.status === "error"
@@ -87,7 +75,6 @@ export default async function handler(req, res) {
           responseData.message || "Google Sheets rejected the submission",
         details: {
           statusCode: upstreamResponse.status,
-          contentType,
           upstream: responseData,
         },
       });
