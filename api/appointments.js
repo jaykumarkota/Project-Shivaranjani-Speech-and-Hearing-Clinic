@@ -56,23 +56,40 @@ export default async function handler(req, res) {
     });
 
     const responseText = await upstreamResponse.text();
+    const contentType = upstreamResponse.headers.get("content-type") || "";
 
     let responseData;
     try {
       responseData = JSON.parse(responseText);
     } catch {
-      responseData = {
-        status: upstreamResponse.ok ? "success" : "error",
-        message: responseText || "Unexpected response from Google Sheets",
-      };
+      return res.status(502).json({
+        status: "error",
+        message:
+          "Google Sheets did not return a valid JSON response. Check the Apps Script deployment access and URL.",
+        details: {
+          statusCode: upstreamResponse.status,
+          contentType,
+          preview: responseText.slice(0, 300),
+        },
+      });
     }
 
-    if (!upstreamResponse.ok || responseData.status === "error") {
+    if (
+      !upstreamResponse.ok ||
+      !contentType.includes("application/json") ||
+      !responseData ||
+      typeof responseData !== "object" ||
+      responseData.status === "error"
+    ) {
       return res.status(502).json({
         status: "error",
         message:
           responseData.message || "Google Sheets rejected the submission",
-        details: responseData,
+        details: {
+          statusCode: upstreamResponse.status,
+          contentType,
+          upstream: responseData,
+        },
       });
     }
 
