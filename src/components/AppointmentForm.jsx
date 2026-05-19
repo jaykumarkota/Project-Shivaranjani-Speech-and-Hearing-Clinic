@@ -249,7 +249,7 @@ function AppointmentForm() {
         );
       }
 
-      setStatus("Appointment request submitted successfully.");
+      setStatus(result.message || "Appointment request submitted successfully.");
       setFormData({
         name: "",
         number: "",
