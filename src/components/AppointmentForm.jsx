@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { serviceOptions } from "../assets/assets.js";
+import { serviceOptions } from "../data/serviceCatalog";
 import {
   FaUserLarge,
   FaVenusMars,

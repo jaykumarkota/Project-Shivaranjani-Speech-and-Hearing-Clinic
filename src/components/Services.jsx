@@ -6,6 +6,7 @@ import { MdOutlineCalendarToday } from "react-icons/md";
 import { FaHeadphones } from "react-icons/fa";
 import { RiSpeakFill } from "react-icons/ri";
 import { ourServicesImgs } from "../assets/assets";
+import { homeServiceOverview } from "../data/serviceCatalog";
 
 
 function Services() {
@@ -71,14 +72,13 @@ function Services() {
             <div className="hs-icon" aria-hidden="true"><FaEarListen /></div>
             <h3 id="hs-hearing-title">Hearing Services</h3>
             <p className="hs-lead">
-              Comprehensive audiology services including testing, hearing device
-              fitting and tinnitus support.
+              {homeServiceOverview.hearing.lead}
             </p>
 
             <ul className="hs-features" aria-label="Hearing services">
-              <li>Diagnostic hearing tests & assessments</li>
-              <li>Digital hearing aid fitting & programming</li>
-              <li>Tinnitus evaluation & management</li>
+              {homeServiceOverview.hearing.features.map((feature) => (
+                <li key={feature}>{feature}</li>
+              ))}
             </ul>
 
             <div className="hs-ctas">
@@ -132,14 +132,13 @@ function Services() {
             <div className="hs-icon" aria-hidden="true"><FaHeadphones /></div>
             <h3 id="hs-implant-title">Implant Services</h3>
             <p className="hs-lead">
-              Advanced implant solutions designed to restore hearing and improve speech
-              understanding for individuals with severe hearing loss.
+              {homeServiceOverview.implant.lead}
             </p>
 
             <ul className="hs-features" aria-label="Implant services">
-              <li>Cochlear implant evaluation & candidacy assessment</li>
-              <li>Pre-implant counseling and diagnostic support</li>
-              <li>Post-implant mapping, tuning & rehabilitation therapy</li>
+              {homeServiceOverview.implant.features.map((feature) => (
+                <li key={feature}>{feature}</li>
+              ))}
             </ul>
 
             <div className="hs-ctas">
@@ -171,14 +170,13 @@ function Services() {
             <div className="hs-icon" aria-hidden="true"><RiSpeakFill /></div>
             <h3 id="hs-speech-title">Speech & Language Therapy</h3>
             <p className="hs-lead">
-              Individualised therapy for children and adults focusing on clarity,
-              fluency and effective communication.
+              {homeServiceOverview.speech.lead}
             </p>
 
             <ul className="hs-features" aria-label="Speech services">
-              <li>Early childhood speech & language intervention</li>
-              <li>Stuttering & fluency programs</li>
-              <li>Voice, articulation & swallowing therapy</li>
+              {homeServiceOverview.speech.features.map((feature) => (
+                <li key={feature}>{feature}</li>
+              ))}
             </ul>
 
             <div className="hs-ctas">

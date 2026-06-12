@@ -1,0 +1,215 @@
+.service-category-page {
+  padding: 4rem 1.25rem 5rem;
+  color: var(--clr-primary);
+}
+
+.service-page-header {
+  text-align: center;
+  max-width: 70ch;
+  margin: 0 auto 3rem;
+}
+
+.service-page-kicker {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  font-size: var(--size-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-btn);
+}
+
+.service-page-title {
+  font-size: var(--size-4xl);
+  margin-bottom: 0.9rem;
+  color: var(--clr-primary);
+}
+
+.service-page-subtitle {
+  font-size: var(--size-base);
+  line-height: 1.7;
+  color: var(--clr-grey);
+}
+
+.service-category-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.service-category-group {
+  background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
+  border: 1px solid rgba(11, 35, 68, 0.08);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(11, 35, 68, 0.06);
+}
+
+.service-category-header {
+  max-width: 65ch;
+  margin-bottom: 2rem;
+}
+
+.service-category-label {
+  font-size: var(--size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--clr-btn);
+  margin-bottom: 0.5rem;
+}
+
+.service-category-title {
+  font-size: var(--size-2xl);
+  color: var(--clr-primary);
+  margin-bottom: 0.75rem;
+}
+
+.service-category-summary {
+  font-size: var(--size-sm);
+  line-height: 1.8;
+  color: #4a5568;
+}
+
+.service-category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem;
+}
+
+.service-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.85fr) 1.15fr;
+  background: #ffffff;
+  border: 1px solid rgba(11, 35, 68, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(11, 35, 68, 0.06);
+  min-height: 100%;
+}
+
+.service-panel-media {
+  position: relative;
+  min-height: 220px;
+  overflow: hidden;
+}
+
+.service-panel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.service-panel:hover .service-panel-image {
+  transform: scale(1.05);
+}
+
+.service-panel-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.75rem;
+  text-align: left;
+}
+
+.service-panel-section {
+  font-size: var(--size-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--clr-btn);
+  margin-bottom: 0.6rem;
+}
+
+.service-panel-title {
+  font-size: var(--size-xl);
+  line-height: 1.35;
+  color: var(--clr-primary);
+  margin-bottom: 0.85rem;
+}
+
+.service-panel-copy {
+  font-size: var(--size-sm);
+  line-height: 1.75;
+  color: #2d3748;
+  margin-bottom: 0.85rem;
+}
+
+.service-panel-copy-secondary {
+  color: #5b6779;
+  margin-bottom: 1.5rem;
+}
+
+.service-panel-button {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  background: var(--clr-btn);
+  color: #ffffff;
+  font-size: var(--size-sm);
+  font-weight: 600;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 6px 18px rgba(11, 35, 68, 0.15);
+}
+
+.service-panel-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(11, 35, 68, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .service-page-title {
+    font-size: var(--size-3xl);
+  }
+
+  .service-category-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-category-page {
+    padding: 3rem 1rem 4rem;
+  }
+
+  .service-category-group {
+    padding: 1.5rem;
+  }
+
+  .service-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .service-panel-media {
+    min-height: 220px;
+  }
+
+  .service-panel-content {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .service-panel-button {
+    align-self: center;
+  }
+}
+
+@media (max-width: 475px) {
+  .service-page-title {
+    font-size: var(--size-2xl);
+  }
+
+  .service-page-subtitle,
+  .service-category-summary,
+  .service-panel-copy {
+    font-size: var(--size-xs);
+  }
+
+  .service-panel-title {
+    font-size: var(--size-lg);
+  }
+}

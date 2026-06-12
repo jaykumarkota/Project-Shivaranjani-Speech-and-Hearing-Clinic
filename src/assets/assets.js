@@ -16,6 +16,7 @@ import book_mini_screen from "./book-mini-screen.png";
 import our_services_hearing from "../assets/OurServicesImgs/our-services-hearing.jpg";
 import our_services_implants from "../assets/OurServicesImgs/our-services-implants.jpg";
 import our_services_speech from "../assets/OurServicesImgs/our-services-speech.jpg";
+export { serviceOptions } from "../data/serviceCatalog";
 
 export const assets = {
   clinic_logo,
@@ -56,31 +57,6 @@ export const ourServicesImgs = {
 
 export const aboutImages = {
   doctor_img: "https://cdn.pixabay.com/photo/2023/12/21/06/23/doctor-8461303_1280.jpg",
-};
-
-export const serviceOptions = {
-  hearing: [
-    { value: "Hearing Aid Services", label: "Hearing Aid Services" },
-    { value: "hearing_therapy", label: "Hearing Therapy" },
-    { value: "hearing_assessment", label: "Hearing Assessment" },
-  ],
-  speech: [
-    { value: "articulation_therapy", label: "Articulation Therapy" },
-    { value: "language_therapy", label: "Language Therapy" },
-    { value: "Voice Therapy", label: "Voice Therapy" },
-  ],
-  implant: [
-    { value: "Cochlear Implant Evaluation & Candidacy Assessment", label: "Cochlear Implant Evaluation & Candidacy Assessment" },
-    { value: "Pre-Implant Counseling & Diagnostic Support", label: "Pre-Implant Counseling & Diagnostic Support" },
-    { value: "Post-Implant Mapping, Tuning & Rehabilitation Therapy", label: "Post-Implant Mapping, Tuning & Rehabilitation Therapy" },
-    { value: "Auditory-Verbal Therapy for Implant Users", label: "Auditory-Verbal Therapy for Implant Users" },
-    { value: "Device Troubleshooting & Maintenance Support", label: "Device Troubleshooting & Maintenance Support" },
-    { value: "Bilateral Implant Assessment & Sequential Implantation", label: "Bilateral Implant Assessment & Sequential Implantation" },
-    { value: "Implant Upgrades & Processor Replacement", label: "Implant Upgrades & Processor Replacement" },
-    { value: "Pediatric Implant Support & Family Training", label: "Pediatric Implant Support & Family Training" },
-    { value: "Adult Implant Rehabilitation & Adaptation Strategies", label: "Adult Implant Rehabilitation & Adaptation Strategies" },
-    { value: "Hybrid & Electroacoustic Implant Solutions", label: "Hybrid & Electroacoustic Implant Solutions" },
-  ],
 };
 
 export const testimonials = [
