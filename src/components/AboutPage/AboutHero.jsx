@@ -1,29 +1,10 @@
-import { useState, useEffect } from 'react';
 import '../../styles/components/AboutPage/AboutHero.css';
 import { Link } from 'react-router-dom';
-import { aboutImages } from '../../assets/assets.js';
-import client from '../../sanity/client';
-import { urlFor } from '../../sanity/imageUrl';
+import useDoctorProfileImage from '../../hooks/useDoctorProfileImage';
 import '../../styles/components/Skeleton.css';
 
 function AboutHero() {
-  const [doctorImg, setDoctorImg] = useState(aboutImages.doctor_img);
-  const [imgLoading, setImgLoading] = useState(true);
-
-  useEffect(() => {
-    client
-      .fetch(`*[_type == "doctor"][0] { profilePic }`)
-      .then((data) => {
-        if (data && data.profilePic) {
-          setDoctorImg(urlFor(data.profilePic).width(800).quality(80).url());
-        }
-        setImgLoading(false);
-      })
-      .catch(() => {
-        // Sanity unavailable — keep fallback image
-        setImgLoading(false);
-      });
-  }, []);
+  const { doctorImg, imgLoading } = useDoctorProfileImage();
 
   return (
     <section className="hero container section" aria-label="Clinic overview">
@@ -46,12 +27,12 @@ function AboutHero() {
           </h1>
 
           <p className="subtitle">
-            Dr. Godumala Shivaranjani — Chief Implant Audiologist &amp; SLP
+            Dr. Godumala Shivaranjani - Chief Implant Audiologist &amp; SLP
           </p>
 
           <p className="hero-desc">
             A trusted center for evidence-based diagnostics, implant audiology,
-            speech-language therapy, and hearing rehabilitation — delivered with
+            speech-language therapy, and hearing rehabilitation - delivered with
             compassion, precision, and advanced technology.
           </p>
 
@@ -75,7 +56,7 @@ function AboutHero() {
 
       </div>
     </section>
-  )
+  );
 }
 
 export default AboutHero;

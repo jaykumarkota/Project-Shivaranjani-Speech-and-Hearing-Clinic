@@ -1,6 +1,10 @@
 import "../../styles/components/AboutPage/AboutDesc.css";
+import "../../styles/components/Skeleton.css";
+import useDoctorProfileImage from "../../hooks/useDoctorProfileImage";
 
 function AboutDesc() {
+  const { doctorImg, imgLoading } = useDoctorProfileImage();
+
   return (
     <section className="about-section container section" aria-labelledby="clinic-about">
       <h2 className="about-title">ABOUT THE CLINIC</h2>
@@ -28,14 +32,19 @@ function AboutDesc() {
           </div>
         </div>
         <div className="about-grid-right">
-          <img
-            src="https://cdn.pixabay.com/photo/2023/12/21/06/23/doctor-8461303_1280.jpg"
-            alt="Dr Shivaranjani Clinic"
-            className="about-grid-right-img"
-          />
+          {imgLoading ? (
+            <div className="skeleton skeleton-about-img"></div>
+          ) : (
+            <img
+              src={doctorImg}
+              alt="Dr Shivaranjani Clinic"
+              className="about-grid-right-img"
+            />
+          )}
         </div>
       </div>
     </section>
   );
 }
+
 export default AboutDesc;
