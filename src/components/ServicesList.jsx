@@ -11,7 +11,7 @@ function ServicesList() {
           <img
             className="services-list-img"
             src={servicesListImgs.hear_large_screen}
-            alt="services-list-image"
+            alt="Hearing services at Shivaranjani Speech and Hearing Clinic"
           />
         </Link>
       </div>
@@ -21,7 +21,7 @@ function ServicesList() {
           <img
             className="services-list-img"
             src={servicesListImgs.speech_large_screen}
-            alt="services-list-image"
+            alt="Speech therapy services at Shivaranjani Speech and Hearing Clinic"
           />
         </Link>
       </div>
@@ -31,7 +31,7 @@ function ServicesList() {
           <img
             className="services-list-img"
             src={servicesListImgs.book_large_screen}
-            alt="services-list-image"
+            alt="Book an appointment at Shivaranjani Speech and Hearing Clinic"
           />
         </Link>
       </div>
@@ -43,7 +43,7 @@ function ServicesList() {
             <img
               src={servicesListImgs.hear_mini_screen}
               className="services-list-img"
-              alt="hearing-logo"
+              alt="Hearing services"
             />
           </Link>
         </div>
@@ -55,7 +55,7 @@ function ServicesList() {
             <img
               src={servicesListImgs.speech_mini_screen}
               className="services-list-img"
-              alt="hearing-logo"
+              alt="Speech services"
             />
           </Link>
         </div>
@@ -67,7 +67,7 @@ function ServicesList() {
             <img
               src={servicesListImgs.book_mini_screen}
               className="services-list-img"
-              alt="hearing-logo"
+              alt="Book appointment"
             />
           </Link>
         </div>

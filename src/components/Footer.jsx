@@ -1,7 +1,7 @@
 import "../styles/components/Footer.css";
 import { assets } from "../assets/assets.js";
 import { Link } from "react-router-dom";
-import { FaLocationDot, FaClock, FaFacebook, FaInstagram, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
+import { FaLocationDot, FaClock, FaWhatsapp } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
 
@@ -11,24 +11,9 @@ function Footer() {
 
   const socialLinks = [
     {
-      href: "https://facebook.com",
-      icon: <FaFacebook className="fb-icon follow-us-icons" />,
-      label: "Facebook",
-    },
-    {
       href: "https://wa.me/918977635998",
       icon: <FaWhatsapp className="wa-icon follow-us-icons" />,
       label: "WhatsApp",
-    },
-    {
-      href: "https://instagram.com",
-      icon: <FaInstagram className="insta-icon follow-us-icons" />,
-      label: "Instagram",
-    },
-    {
-      href: "https://twitter.com",
-      icon: <FaXTwitter className="x-icon follow-us-icons" />,
-      label: "X (Twitter)",
     },
   ];
 
@@ -38,7 +23,12 @@ function Footer() {
       <div className="row1">
         <div className="col1 footer-small-about">
           <div className="logo">
-            <img src={assets.clinic_logo} alt="logo" className="logo-img" loading="lazy" />
+            <img
+              src={assets.clinic_logo}
+              alt="Shivaranjani Speech and Hearing Clinic logo"
+              className="logo-img"
+              loading="lazy"
+            />
             <h2 className="logo-title">
               Shivaranjani
               <br />
@@ -85,7 +75,7 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/faq" className="footer-links">
+                <Link to="/#faq" className="footer-links">
                   FAQ
                 </Link>
               </li>
@@ -104,6 +94,11 @@ function Footer() {
               <li>
                 <Link to="/services/speech" className="footer-links">
                   Speech Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/implants" className="footer-links">
+                  Implant Services
                 </Link>
               </li>
               <li>
@@ -134,8 +129,8 @@ function Footer() {
 
             <div className="contact-item contact-phone-cont" aria-label="Clinic phone number">
               <BsFillTelephoneFill className="contact-icon" />
-              <a href="tel:8977635998" className="footer-links contact-phone">8977635998</a>,
-              <a href="tel:9494704021" className="footer-links contact-phone">9494704021</a>
+              <a href="tel:+918977635998" className="footer-links contact-phone">8977635998</a>,
+              <a href="tel:+919494704021" className="footer-links contact-phone">9494704021</a>
             </div>
 
             <div className="contact-item contact-mail-cont" aria-label="Clinic email">
@@ -150,7 +145,7 @@ function Footer() {
       </div>
       <div className="row2">
         <p className="copyright-msg">
-          Copyright © 2025. Shivaranjani Clinic All rights reserved
+          Copyright (c) 2026. Shivaranjani Speech &amp; Hearing Clinic. All rights reserved.
         </p>
       </div>
     </section>

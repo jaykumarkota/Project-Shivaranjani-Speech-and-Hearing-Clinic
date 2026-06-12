@@ -139,9 +139,9 @@ export const faqs = [
     answer:
       "Coverage depends on your insurance plan. We can provide all necessary documents and reports for reimbursement if your policy includes audiology or speech therapy.",
   },
-  {
-    question: "Where is the clinic located?",
-    answer:
-      "Shivaranjani Speech and Hearing Clinic is conveniently located in [Your Area/City]. You can find our exact location on Google Maps via the contact page.",
-  },
-];
+    {
+      question: "Where is the clinic located?",
+      answer:
+        "Shivaranjani Speech and Hearing Clinic is located at Flat 302, 3rd Floor Nirmala Kubera Heights, Peerzadiguda, Uppal, Hyderabad, Telangana - 500039. You can find directions on the location or contact page.",
+    },
+  ];

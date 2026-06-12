@@ -42,9 +42,9 @@ function AboutHero() {
             </a>
             <Link
               className="btn outline"
-              to='/about/about-docter'
+              to='/about/doctor'
             >
-              Read More About Our Docter
+              Read More About Our Doctor
             </Link>
           </div>
 

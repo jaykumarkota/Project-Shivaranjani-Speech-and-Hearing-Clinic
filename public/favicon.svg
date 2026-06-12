@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Shivaranjani Speech and Hearing Clinic">
+  <rect width="128" height="128" rx="24" fill="#0157AA"/>
+  <circle cx="64" cy="64" r="42" fill="#ffffff"/>
+  <path d="M73 38c-12 0-21 9-21 21 0 7 3 13 9 17 4 3 5 6 5 11v3h13v-4c0-8-3-14-10-18-4-2-6-5-6-9 0-5 4-9 10-9 5 0 9 4 9 9h13c0-12-10-21-22-21Z" fill="#0157AA"/>
+  <path d="M42 45c-8 10-8 28 0 38M32 36c-14 18-14 48 0 66" fill="none" stroke="#0157AA" stroke-width="8" stroke-linecap="round"/>
+</svg>

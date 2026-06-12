@@ -16,12 +16,12 @@ function ServiceCategoryPage({
     >
       <header className="service-page-header">
         <span className="service-page-kicker">Specialized Care</span>
-        <h2
+        <h1
           className="service-page-title"
           id={`${serviceType}-services-heading`}
         >
           {title}
-        </h2>
+        </h1>
         <p className="service-page-subtitle">{subtitle}</p>
       </header>
 
@@ -45,44 +45,45 @@ function ServiceCategoryPage({
 
             <div className="service-category-grid" role="list">
               {section.items.map((item) => (
-                <article
-                  key={item.title}
-                  className="service-panel"
-                  role="listitem"
-                >
-                  <div
-                    className="service-panel-media"
-                    role="img"
-                    aria-label={`${item.title} illustration`}
+                  <article
+                    key={item.title}
+                    className="service-panel"
+                    role="listitem"
                   >
-                    <img
-                      src={item.image}
-                      alt={`${item.title} service`}
-                      className="service-panel-image"
-                    />
-                  </div>
-
-                  <div className="service-panel-content">
-                    <p className="service-panel-section">{section.title}</p>
-                    <h4 className="service-panel-title">{item.title}</h4>
-                    <p className="service-panel-copy">{item.description}</p>
-                    <p className="service-panel-copy service-panel-copy-secondary">
-                      {item.extra}
-                    </p>
-                    <Link
-                      className="service-panel-button btn"
-                      to="/services/book"
-                      state={{
-                        serviceType,
-                        service: item.title,
-                      }}
-                      aria-label={`Book appointment for ${item.title}`}
+                    <div
+                      className="service-panel-media"
+                      role="img"
+                      aria-label={`${item.title} illustration`}
                     >
-                      Book Now
-                    </Link>
-                  </div>
-                </article>
-              ))}
+                      <img
+                        src={item.image}
+                        alt={`${item.title} service`}
+                        className="service-panel-image"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <div className="service-panel-content">
+                      <p className="service-panel-section">{section.title}</p>
+                      <h4 className="service-panel-title">{item.title}</h4>
+                      <p className="service-panel-copy">{item.description}</p>
+                      <p className="service-panel-copy service-panel-copy-secondary">
+                        {item.extra}
+                      </p>
+                      <Link
+                        className="service-panel-button btn"
+                        to="/services/book"
+                        state={{
+                          serviceType,
+                          service: item.title,
+                        }}
+                        aria-label={`Book appointment for ${item.title}`}
+                      >
+                        Book Now
+                      </Link>
+                    </div>
+                  </article>
+                ))}
             </div>
           </section>
         ))}

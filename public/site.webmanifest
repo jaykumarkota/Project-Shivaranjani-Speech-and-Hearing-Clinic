@@ -1,0 +1,18 @@
+{
+  "name": "Shivaranjani Speech & Hearing Clinic",
+  "short_name": "Shivaranjani Clinic",
+  "description": "Speech therapy, hearing tests, hearing aids, implant support, and rehabilitation services in Peerzadiguda, Uppal, Hyderabad.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0157AA",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

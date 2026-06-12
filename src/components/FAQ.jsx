@@ -11,8 +11,8 @@ function FAQ() {
   }
 
   return (
-    <section className="faq-section container section">
-      <h2 className="faq-title">Frequently Asked Questions</h2>
+    <section className="faq-section container section" id="faq" aria-labelledby="faq-heading">
+      <h2 className="faq-title" id="faq-heading">Frequently Asked Questions</h2>
       <div className="faq-list">
         {
           faqs.map((faq, index) => (

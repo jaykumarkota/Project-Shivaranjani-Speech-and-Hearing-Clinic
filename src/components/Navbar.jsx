@@ -29,7 +29,11 @@ function Navbar() {
     <nav className="navbar container">
       <Link to="/">
         <div className="logo">
-          <img src={assets.clinic_logo} alt="logo" className="logo-img" />
+          <img
+            src={assets.clinic_logo}
+            alt="Shivaranjani Speech and Hearing Clinic logo"
+            className="logo-img"
+          />
           <h2 className="logo-title">
             Shivaranjani
             <br />

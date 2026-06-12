@@ -1,6 +1,9 @@
 import "../styles/components/Location.css";
+import { clinicInfo } from "../data/clinicInfo";
 
-function Location() {
+function Location({ headingLevel = "h2" }) {
+  const HeadingTag = headingLevel;
+
   return (
     <section
       className="location-map container section"
@@ -9,8 +12,8 @@ function Location() {
     >
       <div className="location-wrapper">
         <div className="location-text">
-          <h2>Our Clinic Location</h2>
-          <p>
+          <HeadingTag id="clinic-location-title">Our Clinic Location</HeadingTag>
+          <p id="clinic-location-description">
             Shivaranjani Speech & Hearing Clinic is located in Hyderabad,
             offering specialized speech and hearing therapy for children and
             adults. The clinic is easily accessible by public transport and
@@ -22,12 +25,14 @@ function Location() {
           </p>
         </div>
 
-        <div className="map-wrapper"
+        <div
+          className="map-wrapper"
           role="region"
-          aria-label="Google Map showing Shivaranjani Speech and Hearing Clinic location">
+          aria-label="Google Map showing Shivaranjani Speech and Hearing Clinic location"
+        >
           <iframe
             title="Shivaranjani Speech & Hearing Clinic Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d951.8004837419511!2d78.5821943!3d17.4020941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9f00690e2a7d%3A0x513fdf3170598b4b!2sShivaranjani%20Speech%20and%20Hearing%20Clinic!5e0!3m2!1sen!2sin!4v1768296553474!5m2!1sen!2sin"
+            src={clinicInfo.mapEmbedUrl}
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -37,4 +42,5 @@ function Location() {
     </section>
   );
 }
+
 export default Location;

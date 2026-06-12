@@ -1,64 +1,26 @@
 import { Link } from "react-router-dom";
 import "../styles/components/Services.css";
 import { FaEarListen } from "react-icons/fa6";
-import { FaComments } from "react-icons/fa";
 import { MdOutlineCalendarToday } from "react-icons/md";
 import { FaHeadphones } from "react-icons/fa";
 import { RiSpeakFill } from "react-icons/ri";
 import { ourServicesImgs } from "../assets/assets";
 import { homeServiceOverview } from "../data/serviceCatalog";
 
-
-function Services() {
+function Services({ headingLevel = "h2" }) {
   const clinicName = "Shivaranjani Speech & Hearing Clinic";
-
-  const ld = {
-    "@context": "https://schema.org",
-    "@type": "OfferCatalog",
-    "name": "Speech and Hearing Services",
-    "itemListElement": [
-      {
-        "@type": "Service",
-        "name": "Hearing Assessment",
-        "serviceType": "Audiology",
-        "provider": {
-          "@type": "MedicalBusiness",
-          "name": "Shivaranjani Speech & Hearing Clinic"
-        }
-      },
-      {
-        "@type": "Service",
-        "name": "Hearing Aid Fitting",
-        "serviceType": "Hearing Rehabilitation",
-        "provider": {
-          "@type": "MedicalBusiness",
-          "name": "Shivaranjani Speech & Hearing Clinic"
-        }
-      },
-      {
-        "@type": "Service",
-        "name": "Speech & Language Therapy",
-        "serviceType": "Speech Therapy",
-        "provider": {
-          "@type": "MedicalBusiness",
-          "name": "Shivaranjani Speech & Hearing Clinic"
-        }
-      }
-    ]
-  };
+  const HeadingTag = headingLevel;
 
   return (
     <section
       className="hs-advanced-section container section"
       aria-labelledby="hs-advanced-title"
     >
-      <script type="application/ld+json">{JSON.stringify(ld)}</script>
-
       <div className="hs-advanced-top">
         <div className="hs-kicker">Our Services</div>
-        <h2 id="hs-advanced-title" className="hs-title">
-          Specialized Hearing & Speech Care — Personalized, Evidence-Based
-        </h2>
+        <HeadingTag id="hs-advanced-title" className="hs-title">
+          Specialized Hearing & Speech Care - Personalized, Evidence-Based
+        </HeadingTag>
         <p className="hs-sub">
           {clinicName} delivers diagnostic testing, device support, and therapy
           programmes for all ages. Quick assessments. Long-term rehabilitation.
@@ -66,14 +28,17 @@ function Services() {
       </div>
 
       <div className="hs-grid" role="list">
-        {/* Hearing card */}
-        <article className="hs-card hearing" role="listitem" aria-labelledby="hs-hearing-title">
+        <article
+          className="hs-card hearing"
+          role="listitem"
+          aria-labelledby="hs-hearing-title"
+        >
           <div className="hs-card-content">
-            <div className="hs-icon" aria-hidden="true"><FaEarListen /></div>
+            <div className="hs-icon" aria-hidden="true">
+              <FaEarListen />
+            </div>
             <h3 id="hs-hearing-title">Hearing Services</h3>
-            <p className="hs-lead">
-              {homeServiceOverview.hearing.lead}
-            </p>
+            <p className="hs-lead">{homeServiceOverview.hearing.lead}</p>
 
             <ul className="hs-features" aria-label="Hearing services">
               {homeServiceOverview.hearing.features.map((feature) => (
@@ -116,8 +81,11 @@ function Services() {
           </figure>
         </article>
 
-        {/* Implants card */}
-        <article className="hs-card speech" role="listitem" aria-labelledby="hs-implant-title">
+        <article
+          className="hs-card speech"
+          role="listitem"
+          aria-labelledby="hs-implant-title"
+        >
           <figure className="hs-media" aria-hidden="true">
             <img
               src={ourServicesImgs.our_services_implants}
@@ -129,11 +97,11 @@ function Services() {
           </figure>
 
           <div className="hs-card-content">
-            <div className="hs-icon" aria-hidden="true"><FaHeadphones /></div>
+            <div className="hs-icon" aria-hidden="true">
+              <FaHeadphones />
+            </div>
             <h3 id="hs-implant-title">Implant Services</h3>
-            <p className="hs-lead">
-              {homeServiceOverview.implant.lead}
-            </p>
+            <p className="hs-lead">{homeServiceOverview.implant.lead}</p>
 
             <ul className="hs-features" aria-label="Implant services">
               {homeServiceOverview.implant.features.map((feature) => (
@@ -164,14 +132,17 @@ function Services() {
           </div>
         </article>
 
-        {/* Speech card */}
-        <article className="hs-card hearing" role="listitem" aria-labelledby="hs-speech-title">
+        <article
+          className="hs-card hearing"
+          role="listitem"
+          aria-labelledby="hs-speech-title"
+        >
           <div className="hs-card-content">
-            <div className="hs-icon" aria-hidden="true"><RiSpeakFill /></div>
+            <div className="hs-icon" aria-hidden="true">
+              <RiSpeakFill />
+            </div>
             <h3 id="hs-speech-title">Speech & Language Therapy</h3>
-            <p className="hs-lead">
-              {homeServiceOverview.speech.lead}
-            </p>
+            <p className="hs-lead">{homeServiceOverview.speech.lead}</p>
 
             <ul className="hs-features" aria-label="Speech services">
               {homeServiceOverview.speech.features.map((feature) => (
@@ -211,14 +182,9 @@ function Services() {
             />
           </figure>
         </article>
-      </div >
-
-      {/* Accent SVG wave */}
-      {/* <svg className="hs-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0,40 C240,0 480,80 720,40 C960,0 1200,80 1440,40 L1440 80 L0 80 Z" fill="var(--wave-fill, #f4f7fb)"></path>
-      </svg> */}
-    </section >
+      </div>
+    </section>
   );
-};
+}
 
 export default Services;

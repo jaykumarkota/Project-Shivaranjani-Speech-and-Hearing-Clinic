@@ -40,7 +40,7 @@ function FloatingContactButton() {
                     <polyline points="22,6 12,13 2,6" />
                 </svg>
             ),
-            link: "https://mail.google.com/mail/?view=cm&fs=1&to=shivaranjanispeechandhearingcl@gmail.com",
+            link: "mailto:shivaranjanispeechandhearingcl@gmail.com",
             color: "#EA4335"
         }
     ];
