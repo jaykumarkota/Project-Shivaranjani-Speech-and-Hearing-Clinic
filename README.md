@@ -75,46 +75,8 @@ shivaranjani-speech-hearing/
 
 ---
 
-## Development
+## License
 
-### Prerequisites
+This is a **proprietary project**. All source code, designs, and content are the exclusive property of Shivaranjani Speech & Hearing Clinic. Unauthorized copying, modification, distribution, or use of any part of this project is strictly prohibited.
 
-- Node.js 18+
-- npm
-
-### Setup
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-### Environment Variables
-
-Create a `.env` file in the project root with the required Sanity and API credentials. Refer to the existing `.env` file for the variable names.
-
----
-
-## Deployment
-
-The website is deployed on **Vercel** with automatic deployments configured via Git. Pushing to the main branch triggers a production build and deployment.
-
----
-
-## Contact
-
-**Shivaranjani Speech & Hearing Clinic**
-📍 Peerzadiguda, Uppal, Hyderabad, Telangana, India
-
----
-
-*This is a private project. All rights reserved.*
+© 2025 Shivaranjani Speech & Hearing Clinic. All rights reserved.
