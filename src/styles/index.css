@@ -48,7 +48,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 html {
-  scroll-behavior: smooth;
   font-size: 1rem;
 }
 

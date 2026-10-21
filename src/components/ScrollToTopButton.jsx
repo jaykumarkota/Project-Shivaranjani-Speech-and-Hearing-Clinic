@@ -17,10 +17,16 @@ function ScrollToTopButton() {
 
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    // Use Lenis scrollTo if available for buttery-smooth animation,
+    // otherwise fall back to native smooth scroll
+    if (window.__lenis) {
+      window.__lenis.scrollTo(0, { duration: 1.2 });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (

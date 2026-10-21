@@ -10,17 +10,27 @@ function ScrollToTopOnRouteChange() {
         const target = document.getElementById(decodeURIComponent(hash.slice(1)));
 
         if (target) {
-          target.scrollIntoView({ behavior: "auto", block: "start" });
+          // Use Lenis for smooth hash-scroll if available
+          if (window.__lenis) {
+            window.__lenis.scrollTo(target, { offset: 0, duration: 1.2 });
+          } else {
+            target.scrollIntoView({ behavior: "auto", block: "start" });
+          }
         }
       });
       return;
     }
 
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "auto",
-    });
+    // Instant scroll to top on route change (no animation — feels snappy)
+    if (window.__lenis) {
+      window.__lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "auto",
+      });
+    }
   }, [pathname, hash]);
 
   return null;
