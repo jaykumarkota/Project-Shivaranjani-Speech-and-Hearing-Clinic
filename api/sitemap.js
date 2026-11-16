@@ -19,7 +19,7 @@ function getOrigin(req) {
 
 export default function handler(req, res) {
   const origin = getOrigin(req).replace(/\/$/, "");
-  const lastmod = "2026-06-12";
+  const lastmod = new Date().toISOString().slice(0, 10);
   const entries = routes
     .map(
       (route) => `  <url>
